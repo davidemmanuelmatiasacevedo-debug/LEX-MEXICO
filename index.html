@@ -33,11 +33,11 @@ button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d
 </main>
 <script>
 const leyes=[
-{nombre:"Constitución Política de los Estados Unidos Mexicanos",resumen:"Es la ley suprema del país. Reconoce los derechos humanos y organiza al gobierno.",palabras:"derechos libertad igualdad constitucion garantias"},
-{nombre:"Ley Federal del Trabajo",resumen:"Regula las relaciones entre personas trabajadoras y patrones.",palabras:"trabajo despido salario vacaciones aguinaldo contrato empleo"},
-{nombre:"Ley Federal de Protección al Consumidor",resumen:"Protege a quienes compran productos o contratan servicios. La aplica PROFECO.",palabras:"consumidor garantia compra tienda profeco servicio"},
-{nombre:"Código Civil Federal",resumen:"Regula temas como contratos, propiedad, familia y herencias.",palabras:"renta contrato propiedad herencia familia matrimonio"},
-{nombre:"Código Penal Federal",resumen:"Define los delitos federales y sus sanciones.",palabras:"delito denuncia robo fraude penal"}
+{nombre:"Constitución Política de los Estados Unidos Mexicanos",resumen:"Es la ley suprema del país. Reconoce los derechos humanos y organiza al gobierno.",palabras:"derechos libertad igualdad constitucion garantias",enlace:"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"},
+{nombre:"Ley Federal del Trabajo",resumen:"Regula las relaciones entre personas trabajadoras y patrones.",palabras:"trabajo despido salario vacaciones aguinaldo contrato empleo",enlace:"https://www.diputados.gob.mx/LeyesBiblio/pdf/LFT.pdf"},
+{nombre:"Ley Federal de Protección al Consumidor",resumen:"Protege a quienes compran productos o contratan servicios. La aplica PROFECO.",palabras:"consumidor garantia compra tienda profeco servicio",enlace:"https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf"},
+{nombre:"Código Civil Federal",resumen:"Regula temas como contratos, propiedad, familia y herencias.",palabras:"renta contrato propiedad herencia familia matrimonio",enlace:"https://www.diputados.gob.mx/LeyesBiblio/pdf/CCF.pdf"},
+{nombre:"Código Penal Federal",resumen:"Define los delitos federales y sus sanciones.",palabras:"delito denuncia robo fraude penal",enlace:"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf"}
 ];
 function limpiar(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
 function buscar(){
@@ -48,7 +48,7 @@ if(!q){cont.innerHTML="<p>Escribe una palabra para buscar.</p>";return;}
 const hallados=leyes.filter(l=>limpiar(l.nombre+" "+l.resumen+" "+l.palabras).includes(q));
 if(!hallados.length){cont.innerHTML="<p>No encontré resultados. Prueba con otra palabra.</p>";return;}
 hallados.forEach(l=>{
-cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="https://www.diputados.gob.mx/LeyesBiblio/" target="_blank">Ver leyes en el sitio oficial</a></div>';
+cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="'+l.enlace+'" target="_blank" rel="noopener">Leer el texto oficial (PDF)</a></div>';
 });
 }
 document.getElementById("buscar").addEventListener("keydown",function(e){if(e.key==="Enter"){buscar();}});
