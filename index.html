@@ -13,6 +13,9 @@ main{padding:20px;max-width:700px;margin:auto;}
 label{display:block;font-size:24px;font-weight:bold;margin-bottom:10px;}
 input{width:100%;box-sizing:border-box;font-size:22px;padding:16px;border:2px solid #14532d;border-radius:10px;}
 button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d;color:#fff;border:none;border-radius:10px;}
+.sub{margin:18px 0 0;font-size:18px;color:#555;}
+.chip{width:auto;display:inline-block;font-size:18px;padding:10px 14px;margin:8px 8px 0 0;background:#e3efe7;color:#14532d;border:1px solid #14532d;border-radius:20px;}
+.borrar{width:auto;display:block;font-size:16px;padding:8px 12px;margin-top:12px;background:none;color:#555;border:1px solid #999;border-radius:8px;}
 .tarjeta{background:#fff;border:1px solid #ccc;border-radius:10px;padding:16px;margin-top:16px;}
 .tarjeta h2{margin:0 0 8px;font-size:24px;color:#14532d;}
 .tarjeta a{display:block;color:#14532d;font-weight:bold;margin-top:10px;}
@@ -28,24 +31,60 @@ button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d
 <label for="buscar">¿Qué quieres saber?</label>
 <input id="buscar" type="text" placeholder="Ejemplo: despido, renta, garantía">
 <button onclick="buscar()">Buscar</button>
+<div id="historial"></div>
 <div id="resultados"></div>
 <p class="aviso">LEX MÉXICO ofrece información y orientación. No sustituye a un abogado.</p>
 </main>
 <script src="leyes.js"></script>
 <script>
 function limpiar(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+function leerHistorial(){
+try{return JSON.parse(localStorage.getItem("historial")||"[]");}catch(e){return [];}
+}
+function guardarHistorial(texto){
+let h=leerHistorial().filter(function(x){return limpiar(x)!==limpiar(texto);});
+h.unshift(texto);
+h=h.slice(0,8);
+try{localStorage.setItem("historial",JSON.stringify(h));}catch(e){}
+mostrarHistorial();
+}
+function mostrarHistorial(){
+const h=leerHistorial();
+const c=document.getElementById("historial");
+c.innerHTML="";
+if(!h.length){return;}
+const t=document.createElement("p");
+t.className="sub";
+t.textContent="Búsquedas recientes";
+c.appendChild(t);
+h.forEach(function(texto){
+const b=document.createElement("button");
+b.className="chip";
+b.textContent=texto;
+b.onclick=function(){document.getElementById("buscar").value=texto;buscar();};
+c.appendChild(b);
+});
+const x=document.createElement("button");
+x.className="borrar";
+x.textContent="Borrar historial";
+x.onclick=function(){try{localStorage.removeItem("historial");}catch(e){}mostrarHistorial();};
+c.appendChild(x);
+}
 function buscar(){
-const q=limpiar(document.getElementById("buscar").value.trim());
+const texto=document.getElementById("buscar").value.trim();
+const q=limpiar(texto);
 const cont=document.getElementById("resultados");
 cont.innerHTML="";
 if(!q){cont.innerHTML="<p>Escribe una palabra para buscar.</p>";return;}
-const hallados=leyes.filter(l=>limpiar(l.nombre+" "+l.resumen+" "+l.palabras).includes(q));
+guardarHistorial(texto);
+const hallados=leyes.filter(function(l){return limpiar(l.nombre+" "+l.resumen+" "+l.palabras).includes(q);});
 if(!hallados.length){cont.innerHTML="<p>No encontré resultados. Prueba con otra palabra.</p>";return;}
-hallados.forEach(l=>{
+hallados.forEach(function(l){
 cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="'+l.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a><a href="'+l.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a></div>';
 });
 }
 document.getElementById("buscar").addEventListener("keydown",function(e){if(e.key==="Enter"){buscar();}});
+mostrarHistorial();
 </script>
 </body>
 </html>
