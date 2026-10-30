@@ -13,6 +13,9 @@ main{padding:20px;max-width:700px;margin:auto;}
 label{display:block;font-size:24px;font-weight:bold;margin-bottom:10px;}
 input{width:100%;box-sizing:border-box;font-size:22px;padding:16px;border:2px solid #14532d;border-radius:10px;}
 button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d;color:#fff;border:none;border-radius:10px;}
+.tarjeta{background:#fff;border:1px solid #ccc;border-radius:10px;padding:16px;margin-top:16px;}
+.tarjeta h2{margin:0 0 8px;font-size:24px;color:#14532d;}
+.tarjeta a{color:#14532d;font-weight:bold;}
 .aviso{font-size:16px;color:#555;margin-top:30px;}
 </style>
 </head>
@@ -24,9 +27,31 @@ button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d
 <main>
 <label for="buscar">¿Qué quieres saber?</label>
 <input id="buscar" type="text" placeholder="Ejemplo: despido, renta, garantía">
-<button>Buscar</button>
+<button onclick="buscar()">Buscar</button>
+<div id="resultados"></div>
 <p class="aviso">LEX MÉXICO ofrece información y orientación. No sustituye a un abogado.</p>
 </main>
+<script>
+const leyes=[
+{nombre:"Constitución Política de los Estados Unidos Mexicanos",resumen:"Es la ley suprema del país. Reconoce los derechos humanos y organiza al gobierno.",palabras:"derechos libertad igualdad constitucion garantias"},
+{nombre:"Ley Federal del Trabajo",resumen:"Regula las relaciones entre personas trabajadoras y patrones.",palabras:"trabajo despido salario vacaciones aguinaldo contrato empleo"},
+{nombre:"Ley Federal de Protección al Consumidor",resumen:"Protege a quienes compran productos o contratan servicios. La aplica PROFECO.",palabras:"consumidor garantia compra tienda profeco servicio"},
+{nombre:"Código Civil Federal",resumen:"Regula temas como contratos, propiedad, familia y herencias.",palabras:"renta contrato propiedad herencia familia matrimonio"},
+{nombre:"Código Penal Federal",resumen:"Define los delitos federales y sus sanciones.",palabras:"delito denuncia robo fraude penal"}
+];
+function limpiar(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+function buscar(){
+const q=limpiar(document.getElementById("buscar").value.trim());
+const cont=document.getElementById("resultados");
+cont.innerHTML="";
+if(!q){cont.innerHTML="<p>Escribe una palabra para buscar.</p>";return;}
+const hallados=leyes.filter(l=>limpiar(l.nombre+" "+l.resumen+" "+l.palabras).includes(q));
+if(!hallados.length){cont.innerHTML="<p>No encontré resultados. Prueba con otra palabra.</p>";return;}
+hallados.forEach(l=>{
+cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="https://www.diputados.gob.mx/LeyesBiblio/" target="_blank">Ver leyes en el sitio oficial</a></div>';
+});
+}
+document.getElementById("buscar").addEventListener("keydown",function(e){if(e.key==="Enter"){buscar();}});
+</script>
 </body>
 </html>
-
