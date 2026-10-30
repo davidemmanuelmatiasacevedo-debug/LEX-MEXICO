@@ -19,7 +19,12 @@ button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d
 .borrar{width:auto;display:block;font-size:16px;padding:8px 12px;margin-top:12px;background:none;color:#555;border:1px solid #999;border-radius:8px;}
 .tarjeta{background:#fff;border:1px solid #ccc;border-radius:10px;padding:16px;margin-top:16px;}
 .tarjeta h2{margin:0 0 8px;font-size:24px;color:#14532d;}
-.tarjeta a{display:block;color:#14532d;font-weight:bold;margin-top:10px;}
+.tema{background:#fff;border:1px solid #ccc;border-left:8px solid #14532d;border-radius:10px;padding:16px;margin-top:16px;}
+.tema h2{margin:0 0 8px;font-size:28px;color:#14532d;}
+.tema h3{margin:16px 0 4px;font-size:20px;color:#14532d;}
+.tema p{margin:0;}
+.tema .nota{background:#fff8e1;padding:10px;border-radius:8px;margin-top:16px;font-size:18px;}
+.tarjeta a,.tema a{display:block;color:#14532d;font-weight:bold;margin-top:12px;}
 .aviso{font-size:16px;color:#555;margin-top:30px;}
 </style>
 </head>
@@ -30,7 +35,7 @@ button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d
 </header>
 <main>
 <label for="buscar">¿Qué quieres saber?</label>
-<input id="buscar" type="text" placeholder="Ejemplo: despido, renta, garantía" oninput="sugerir()" autocomplete="off">
+<input id="buscar" type="text" placeholder="Ejemplo: despido, robo, garantía" oninput="sugerir()" autocomplete="off">
 <div id="sugerencias"></div>
 <button onclick="buscar()">Buscar</button>
 <div id="historial"></div>
@@ -38,19 +43,22 @@ button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d
 <p class="aviso">LEX MÉXICO ofrece información y orientación. No sustituye a un abogado.</p>
 </main>
 <script src="leyes.js"></script>
+<script src="temas.js"></script>
 <script>
 function limpiar(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
 
 const vocabulario=[];
-leyes.forEach(function(l){
-(l.nombre+" "+l.palabras).split(/\s+/).forEach(function(w){
-const texto=w.toLowerCase().replace(/[^a-záéíóúüñ]/g,"");
-const clave=limpiar(texto);
+function agregarPalabras(texto){
+texto.split(/\s+/).forEach(function(w){
+const t=w.toLowerCase().replace(/[^a-záéíóúüñ]/g,"");
+const clave=limpiar(t);
 if(clave.length>=4&&!vocabulario.some(function(v){return v.clave===clave;})){
-vocabulario.push({clave:clave,texto:texto});
+vocabulario.push({clave:clave,texto:t});
 }
 });
-});
+}
+leyes.forEach(function(l){agregarPalabras(l.nombre+" "+l.palabras);});
+temas.forEach(function(t){agregarPalabras(t.nombre+" "+t.palabras);});
 
 function distancia(a,b){
 const m=a.length,n=b.length;
@@ -151,11 +159,25 @@ return tok;
 return cambio?salida.join(" "):null;
 }
 
-function filtrar(q){
+function filtrar(lista,q,campos){
 const tokens=q.split(/\s+/);
-return leyes.filter(function(l){
-const base=limpiar(l.nombre+" "+l.resumen+" "+l.palabras);
+return lista.filter(function(x){
+const base=limpiar(campos(x));
 return tokens.every(function(t){return base.indexOf(t)!==-1;});
+});
+}
+function leyesQue(q){return filtrar(leyes,q,function(l){return l.nombre+" "+l.resumen+" "+l.palabras;});}
+function temasQue(q){return filtrar(temas,q,function(t){return t.nombre+" "+t.palabras;});}
+
+function pintar(th,lh,aviso){
+const cont=document.getElementById("resultados");
+cont.innerHTML=aviso;
+th.forEach(function(t){
+cont.innerHTML+='<div class="tema"><h2>'+t.nombre+'</h2><h3>Qué es</h3><p>'+t.queEs+'</p><h3>Qué conlleva</h3><p>'+t.queConlleva+'</p><h3>Dónde lo dice la ley</h3><p>'+t.ley+'</p><p class="nota"><b>Importante:</b> '+t.importante+'</p><a href="'+t.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a><a href="'+t.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a></div>';
+});
+if(th.length&&lh.length){cont.innerHTML+='<p class="sub">Leyes relacionadas</p>';}
+lh.forEach(function(l){
+cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="'+l.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a><a href="'+l.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a></div>';
 });
 }
 
@@ -167,20 +189,19 @@ document.getElementById("sugerencias").innerHTML="";
 cont.innerHTML="";
 if(!q){cont.innerHTML="<p>Escribe una palabra para buscar.</p>";return;}
 guardarHistorial(texto);
-let hallados=filtrar(q);
+let th=temasQue(q);
+let lh=leyesQue(q);
 let aviso="";
-if(!hallados.length){
+if(!th.length&&!lh.length){
 const c=corregir(q);
 if(c){
-hallados=filtrar(limpiar(c));
-if(hallados.length){aviso='<p class="sub">Mostrando resultados para: <b>'+c+'</b></p>';}
+th=temasQue(limpiar(c));
+lh=leyesQue(limpiar(c));
+if(th.length||lh.length){aviso='<p class="sub">Mostrando resultados para: <b>'+c+'</b></p>';}
 }
 }
-if(!hallados.length){cont.innerHTML="<p>No encontré resultados. Prueba con otra palabra.</p>";return;}
-cont.innerHTML=aviso;
-hallados.forEach(function(l){
-cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="'+l.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a><a href="'+l.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a></div>';
-});
+if(!th.length&&!lh.length){cont.innerHTML="<p>No encontré resultados. Prueba con otra palabra.</p>";return;}
+pintar(th,lh,aviso);
 }
 document.getElementById("buscar").addEventListener("keydown",function(e){if(e.key==="Enter"){buscar();}});
 mostrarHistorial();
