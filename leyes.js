@@ -209,5 +209,68 @@ resumen:"Regula el derecho de acceso a la información pública y las obligacion
 palabras:"transparencia informacion publica solicitudes datos gobierno acceso informacion",
 web:"https://www.diputados.gob.mx/LeyesBiblio/",
 pdf:""
+},
+{
+nombre:"Ley General de Movilidad y Seguridad Vial",
+resumen:"Establece las bases y principios para garantizar el derecho a la movilidad y la seguridad vial en todo México.",
+palabras:"transito movilidad seguridad vial peatones ciclistas automovilistas transporte accidentes",
+web:"https://www.ordenjuridico.gob.mx/Documentos/Federal/html/wo124595.html",
+pdf:"https://www.ordenjuridico.gob.mx/Documentos/Federal/html/wo124595.html"
+},
+{
+nombre:"Reglamento de Tránsito en Carreteras y Puentes de Jurisdicción Federal",
+resumen:"Regula la circulación de vehículos, conductores, pasajeros y peatones en carreteras y puentes federales.",
+palabras:"transito federal carreteras puentes multas infracciones velocidad placas conductores",
+web:"https://dof.gob.mx/nota_detalle_popup.php?codigo=5278684",
+pdf:"https://www.dof.gob.mx/abrirPDF.php?anio=2012&archivo=22112012-MAT.pdf&repo=repositorio%2F"
+},
+{
+nombre:"Ley de Tránsito y Vialidad del Estado de Oaxaca",
+resumen:"Regula el tránsito de personas y vehículos en las vías públicas de competencia estatal en Oaxaca y establece disposiciones de vialidad y sanciones administrativas.",
+palabras:"transito oaxaca vialidad multas infracciones placas licencia automovil motocicleta conductor",
+web:"https://www.oaxaca.gob.mx/semovi/marco-juridico/",
+pdf:"https://www.oaxaca.gob.mx/semovi/wp-content/uploads/sites/34/2025/10/Ley_de_Transito_y_vialidad_Ref_dto_706_LXVI_Legis_8_jul_2025_PO_32_IX_secc_de_fecha_9_agosto_2025.pdf"
+},
+{
+nombre:"Ley de Movilidad para el Estado de Oaxaca",
+resumen:"Regula la movilidad de personas y mercancías, así como el transporte público y privado y los servicios relacionados en Oaxaca.",
+palabras:"movilidad oaxaca transporte publico taxi colectivo autobuses concesiones rutas pasajeros",
+web:"https://www.oaxaca.gob.mx/semovi/marco-juridico/",
+pdf:"https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html"
+},
+{
+nombre:"Reglamento de la Ley de Movilidad para el Estado de Oaxaca",
+resumen:"Desarrolla disposiciones administrativas para aplicar la Ley de Movilidad de Oaxaca.",
+palabras:"reglamento movilidad oaxaca transporte concesiones permisos servicio publico",
+web:"https://www.oaxaca.gob.mx/semovi/marco-juridico/",
+pdf:"https://www.oaxaca.gob.mx/semovi/marco-juridico/"
+},
+{
+nombre:"Ley de Caminos, Puentes y Autotransporte Federal",
+resumen:"Regula la construcción, operación, explotación, conservación y mantenimiento de caminos y puentes federales, así como el autotransporte federal.",
+palabras:"carreteras federales caminos puentes autotransporte camiones transporte federal",
+web:"https://www.diputados.gob.mx/LeyesBiblio/",
+pdf:"https://www.diputados.gob.mx/LeyesBiblio/"
+},
+{
+nombre:"Ley de Caminos y Aeropistas de Oaxaca",
+resumen:"Contiene disposiciones estatales relacionadas con caminos y aeropistas en Oaxaca.",
+palabras:"caminos carreteras aeropistas oaxaca vialidad infraestructura",
+web:"https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html",
+pdf:"https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html"
+},
+{
+nombre:"Ley de Caminos, Carreteras y Puentes para el Estado de Oaxaca",
+resumen:"Regula aspectos estatales de caminos, carreteras y puentes en Oaxaca.",
+palabras:"caminos carreteras puentes oaxaca infraestructura vial",
+web:"https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html",
+pdf:"https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html"
+},
+{
+nombre:"Ley de Encierros y Depósitos de Vehículos para el Estado de Oaxaca",
+resumen:"Regula aspectos relacionados con los encierros y depósitos de vehículos en el estado.",
+palabras:"corralon grua deposito vehiculos arrastre encierro automovil oaxaca",
+web:"https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html",
+pdf:"https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html"
 }
 ];
