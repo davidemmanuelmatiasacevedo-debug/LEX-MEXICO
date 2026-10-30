@@ -14,6 +14,7 @@ label{display:block;font-size:24px;font-weight:bold;margin-bottom:10px;}
 input{width:100%;box-sizing:border-box;font-size:22px;padding:16px;border:2px solid #14532d;border-radius:10px;}
 button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d;color:#fff;border:none;border-radius:10px;}
 .sub{margin:18px 0 0;font-size:18px;color:#555;}
+.sugerencia{width:100%;text-align:left;font-size:22px;padding:14px 16px;margin-top:6px;background:#fff;color:#1a1a1a;border:1px solid #ccc;border-radius:8px;}
 .chip{width:auto;display:inline-block;font-size:18px;padding:10px 14px;margin:8px 8px 0 0;background:#e3efe7;color:#14532d;border:1px solid #14532d;border-radius:20px;}
 .borrar{width:auto;display:block;font-size:16px;padding:8px 12px;margin-top:12px;background:none;color:#555;border:1px solid #999;border-radius:8px;}
 .tarjeta{background:#fff;border:1px solid #ccc;border-radius:10px;padding:16px;margin-top:16px;}
@@ -29,7 +30,8 @@ button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d
 </header>
 <main>
 <label for="buscar">¿Qué quieres saber?</label>
-<input id="buscar" type="text" placeholder="Ejemplo: despido, renta, garantía">
+<input id="buscar" type="text" placeholder="Ejemplo: despido, renta, garantía" oninput="sugerir()" autocomplete="off">
+<div id="sugerencias"></div>
 <button onclick="buscar()">Buscar</button>
 <div id="historial"></div>
 <div id="resultados"></div>
@@ -38,6 +40,35 @@ button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d
 <script src="leyes.js"></script>
 <script>
 function limpiar(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+
+const vocabulario=[];
+leyes.forEach(function(l){
+(l.nombre+" "+l.palabras).split(/\s+/).forEach(function(w){
+const texto=w.toLowerCase().replace(/[^a-záéíóúüñ]/g,"");
+const clave=limpiar(texto);
+if(clave.length>=4&&!vocabulario.some(function(v){return v.clave===clave;})){
+vocabulario.push({clave:clave,texto:texto});
+}
+});
+});
+
+function distancia(a,b){
+const m=a.length,n=b.length;
+const d=[];
+for(let i=0;i<=m;i++){d[i]=[i];}
+for(let j=1;j<=n;j++){d[0][j]=j;}
+for(let i=1;i<=m;i++){
+for(let j=1;j<=n;j++){
+const c=a[i-1]===b[j-1]?0:1;
+d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+}
+}
+return d[m][n];
+}
+function puntaje(a,b){
+return Math.min(distancia(a,b),distancia(a,b.slice(0,a.length)));
+}
+
 function leerHistorial(){
 try{return JSON.parse(localStorage.getItem("historial")||"[]");}catch(e){return [];}
 }
@@ -70,15 +101,83 @@ x.textContent="Borrar historial";
 x.onclick=function(){try{localStorage.removeItem("historial");}catch(e){}mostrarHistorial();};
 c.appendChild(x);
 }
+
+function sugerir(){
+const caja=document.getElementById("sugerencias");
+caja.innerHTML="";
+const valor=document.getElementById("buscar").value;
+const t=limpiar(valor.trim());
+if(t.length<2){return;}
+const partes=valor.trim().split(/\s+/);
+const ultima=limpiar(partes[partes.length-1]);
+const inicio=partes.slice(0,-1).join(" ");
+const lista=[];
+leerHistorial().forEach(function(h){
+if(limpiar(h).indexOf(t)===0&&limpiar(h)!==t){lista.push({texto:h,etiqueta:"🕘 "+h});}
+});
+const margen=ultima.length>=6?2:1;
+const cand=[];
+vocabulario.forEach(function(v){
+const p=ultima.length>=3?puntaje(ultima,v.clave):(v.clave.indexOf(ultima)===0?0:99);
+if(p<=margen&&v.clave!==ultima){cand.push({v:v,p:p});}
+});
+cand.sort(function(a,b){return a.p-b.p||a.v.clave.length-b.v.clave.length;});
+cand.slice(0,5).forEach(function(c){
+const completo=(inicio?inicio+" ":"")+c.v.texto;
+lista.push({texto:completo,etiqueta:"🔍 "+completo});
+});
+lista.slice(0,6).forEach(function(s){
+const b=document.createElement("button");
+b.className="sugerencia";
+b.textContent=s.etiqueta;
+b.onclick=function(){document.getElementById("buscar").value=s.texto;buscar();};
+caja.appendChild(b);
+});
+}
+
+function corregir(q){
+let cambio=false;
+const salida=q.split(/\s+/).map(function(tok){
+if(vocabulario.some(function(v){return v.clave.indexOf(tok)!==-1;})){return tok;}
+const margen=tok.length>=6?2:1;
+let mejor=null,mp=99;
+vocabulario.forEach(function(v){
+const p=distancia(tok,v.clave);
+if(p<mp){mp=p;mejor=v;}
+});
+if(tok.length>=4&&mejor&&mp<=margen){cambio=true;return mejor.texto;}
+return tok;
+});
+return cambio?salida.join(" "):null;
+}
+
+function filtrar(q){
+const tokens=q.split(/\s+/);
+return leyes.filter(function(l){
+const base=limpiar(l.nombre+" "+l.resumen+" "+l.palabras);
+return tokens.every(function(t){return base.indexOf(t)!==-1;});
+});
+}
+
 function buscar(){
 const texto=document.getElementById("buscar").value.trim();
 const q=limpiar(texto);
 const cont=document.getElementById("resultados");
+document.getElementById("sugerencias").innerHTML="";
 cont.innerHTML="";
 if(!q){cont.innerHTML="<p>Escribe una palabra para buscar.</p>";return;}
 guardarHistorial(texto);
-const hallados=leyes.filter(function(l){return limpiar(l.nombre+" "+l.resumen+" "+l.palabras).includes(q);});
+let hallados=filtrar(q);
+let aviso="";
+if(!hallados.length){
+const c=corregir(q);
+if(c){
+hallados=filtrar(limpiar(c));
+if(hallados.length){aviso='<p class="sub">Mostrando resultados para: <b>'+c+'</b></p>';}
+}
+}
 if(!hallados.length){cont.innerHTML="<p>No encontré resultados. Prueba con otra palabra.</p>";return;}
+cont.innerHTML=aviso;
 hallados.forEach(function(l){
 cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="'+l.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a><a href="'+l.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a></div>';
 });
