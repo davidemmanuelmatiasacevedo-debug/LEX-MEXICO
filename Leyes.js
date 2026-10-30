@@ -1,0 +1,7 @@
+const leyes=[
+{nombre:"Constitución Política de los Estados Unidos Mexicanos",resumen:"Es la ley suprema del país. Reconoce los derechos humanos y organiza al gobierno.",palabras:"derechos libertad igualdad constitucion garantias",web:"https://www.diputados.gob.mx/LeyesBiblio/ref/cpeum.htm",pdf:"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"},
+{nombre:"Ley Federal del Trabajo",resumen:"Regula las relaciones entre personas trabajadoras y patrones.",palabras:"trabajo despido salario vacaciones aguinaldo contrato empleo",web:"https://www.diputados.gob.mx/LeyesBiblio/ref/lft.htm",pdf:"https://www.diputados.gob.mx/LeyesBiblio/pdf/LFT.pdf"},
+{nombre:"Ley Federal de Protección al Consumidor",resumen:"Protege a quienes compran productos o contratan servicios. La aplica PROFECO.",palabras:"consumidor garantia compra tienda profeco servicio",web:"https://www.diputados.gob.mx/LeyesBiblio/ref/lfpc.htm",pdf:"https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf"},
+{nombre:"Código Civil Federal",resumen:"Regula temas como contratos, propiedad, familia y herencias.",palabras:"renta contrato propiedad herencia familia matrimonio",web:"https://www.diputados.gob.mx/LeyesBiblio/ref/ccf.htm",pdf:"https://www.diputados.gob.mx/LeyesBiblio/pdf/CCF.pdf"},
+{nombre:"Código Penal Federal",resumen:"Define los delitos federales y sus sanciones.",palabras:"delito denuncia robo fraude penal",web:"https://www.diputados.gob.mx/LeyesBiblio/ref/cpf.htm",pdf:"https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf"}
+];
