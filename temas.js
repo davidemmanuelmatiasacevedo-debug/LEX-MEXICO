@@ -70,7 +70,7 @@ importante: "Un conflicto de propiedad, posesión o arrendamiento no constituye 
 web: "https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html",
 pdf: "https://www.congresooaxaca.gob.mx/docs66.congresooaxaca.gob.mx/legislacion_estatal/Codigo_Penal_para_el_Edo_de_Oax_%28_Ref_dto_907_aprob_LXVI_Legis_9_dic_2025_PO_2_12a_secc_10_ene_2026%29.pdf"
 },
-  ,
+  
 {
 nombre: "Multas e infracciones de tránsito",
 palabras: "transito infraccion infracciones multa multas velocidad semaforo alto estacionarse exceso velocidad celular alcohol alcoholimetro conducir manejar oaxaca",
