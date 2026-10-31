@@ -159,8 +159,11 @@ return tok;
 return cambio?salida.join(" "):null;
 }
 
+const vacias=["de","del","la","las","el","los","en","y","o","para","por","con","un","una","ley","leyes","reglamento","reglamentos","codigo","codigos"];
 function filtrar(lista,q,campos){
-const tokens=q.split(/\s+/);
+let tokens=q.split(/\s+/).filter(function(t){return t;});
+const utiles=tokens.filter(function(t){return vacias.indexOf(t)===-1;});
+if(utiles.length){tokens=utiles;}
 return lista.filter(function(x){
 const base=limpiar(campos(x));
 return tokens.every(function(t){return base.indexOf(t)!==-1;});
