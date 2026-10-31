@@ -69,5 +69,61 @@ ley: "Código Penal para el Estado de Oaxaca o legislación federal, según corr
 importante: "Un conflicto de propiedad, posesión o arrendamiento no constituye automáticamente despojo. Deben analizarse los hechos y los documentos.",
 web: "https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html",
 pdf: "https://www.congresooaxaca.gob.mx/docs66.congresooaxaca.gob.mx/legislacion_estatal/Codigo_Penal_para_el_Edo_de_Oax_%28_Ref_dto_907_aprob_LXVI_Legis_9_dic_2025_PO_2_12a_secc_10_ene_2026%29.pdf"
+},
+  ,
+{
+nombre: "Multas e infracciones de tránsito",
+palabras: "transito infraccion infracciones multa multas velocidad semaforo alto estacionarse exceso velocidad celular alcohol alcoholimetro conducir manejar oaxaca",
+queEs: "Son las sanciones por incumplir las reglas de circulación: exceso de velocidad, no respetar semáforos o señales, estacionarse en lugar prohibido, usar el celular al manejar, entre otras.",
+queConlleva: "Normalmente una multa, y según la falta puede haber retención de la licencia o de las placas, o que el vehículo sea remitido a un depósito. En faltas graves, como conducir en estado de ebriedad, puede haber consecuencias más fuertes.",
+ley: "En Oaxaca aplican la Ley de Tránsito y Vialidad del Estado y su Reglamento. En carreteras y puentes federales, el Reglamento de Tránsito en Carreteras y Puentes de Jurisdicción Federal. A nivel nacional, la Ley General de Movilidad y Seguridad Vial. Artículos específicos pendientes de verificación.",
+importante: "Los montos y las faltas cambian según la autoridad (estatal, municipal o federal) y se reforman con frecuencia. Pide siempre que te den por escrito la infracción con el fundamento legal y revisa la versión vigente.",
+web: "https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html"
+},
+{
+nombre: "Licencia de conducir y placas",
+palabras: "licencia conducir manejar placas tarjeta circulacion permiso vehiculo registro refrendo tenencia motocicleta automovil oaxaca",
+queEs: "Es la documentación que permite conducir y circular legalmente: licencia de conducir, placas y tarjeta de circulación del vehículo.",
+queConlleva: "Conducir sin licencia, con la licencia vencida o sin placas o tarjeta de circulación puede generar multa y que el vehículo sea retenido o enviado a un depósito.",
+ley: "Ley de Tránsito y Vialidad del Estado de Oaxaca y su Reglamento. A nivel nacional, la Ley General de Movilidad y Seguridad Vial establece bases generales. Artículos específicos pendientes de verificación.",
+importante: "Los requisitos, costos y vigencias los define cada estado. Consulta los trámites vigentes en las oficinas o el portal de la autoridad de movilidad de Oaxaca.",
+web: "https://www.oaxaca.gob.mx/semovi/marco-juridico/"
+},
+{
+nombre: "Corralón y grúa",
+palabras: "corralon grua deposito encierro arrastre vehiculo remolque retiro liberar carro moto oaxaca",
+queEs: "Es cuando la autoridad manda un vehículo a un depósito (corralón), generalmente con grúa, por una infracción, por estar mal estacionado o por estar involucrado en un hecho de tránsito.",
+queConlleva: "Para recuperar el vehículo normalmente hay que pagar la multa y los cobros por arrastre y depósito, y acreditar que eres el propietario o el responsable.",
+ley: "Ley de Encierros y Depósitos de Vehículos para el Estado de Oaxaca, junto con la Ley de Tránsito y Vialidad del Estado y su Reglamento. Artículos específicos pendientes de verificación.",
+importante: "Pide el documento que explique por qué se llevaron el vehículo y revisa los cobros que te hagan. Si consideras que fue indebido, puedes inconformarte por las vías que marque la ley.",
+web: "https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html"
+},
+{
+nombre: "Accidente de tránsito o choque",
+palabras: "accidente choque chocar colision atropello atropellado daños lesiones seguro aseguradora ministerio publico vial peatones ciclistas",
+queEs: "Es un hecho en el que un vehículo causa daños a otro vehículo, a bienes o a personas, incluidos peatones y ciclistas.",
+queConlleva: "Quien causa el daño puede tener que repararlo (responsabilidad civil). Si hay lesionados o fallecidos, puede haber responsabilidad penal. También puede haber multas de tránsito.",
+ley: "Para la reparación del daño, el Código Civil. Para lesiones u homicidio, el Código Penal aplicable. En materia vial, la Ley General de Movilidad y Seguridad Vial y la ley de tránsito del estado. Artículos específicos pendientes de verificación.",
+importante: "Si hay lesionados, llama a emergencias y no muevas el vehículo hasta que llegue la autoridad. Si tienes seguro, avisa a la aseguradora. Evita firmar convenios sin entender qué aceptas.",
+web: "https://www.diputados.gob.mx/LeyesBiblio/index.htm",
+pdf: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGMSV.pdf"
+},
+{
+nombre: "Transporte público, taxis y concesiones",
+palabras: "transporte publico taxi taxis colectivo urbano pasajeros concesion concesiones permiso movilidad servicio oaxaca",
+queEs: "Son las reglas del servicio de transporte de pasajeros, como taxis, colectivos y autobuses urbanos, y de las concesiones o permisos para prestarlo.",
+queConlleva: "Prestar el servicio sin concesión o permiso, o incumpliendo sus condiciones, puede generar sanciones, multas y retiro del vehículo. Como usuario, tienes derecho a un servicio seguro.",
+ley: "Ley de Movilidad para el Estado de Oaxaca y su Reglamento. Artículos específicos pendientes de verificación.",
+importante: "Si tienes una queja del servicio, puedes presentarla ante la autoridad de movilidad del estado. Conserva datos del vehículo, como placas, número económico y hora.",
+web: "https://www.oaxaca.gob.mx/semovi/marco-juridico/"
+},
+{
+nombre: "Carreteras, caminos y autotransporte",
+palabras: "carretera carreteras caminos puentes casetas autotransporte camion autobus federal estatal peaje oaxaca",
+queEs: "Son las reglas sobre carreteras, caminos y puentes, y sobre el autotransporte de pasajeros y carga que circula por ellos.",
+queConlleva: "Cambia según la jurisdicción. En caminos federales, las infracciones y los permisos los regula la normativa federal. En caminos estatales, la normativa de Oaxaca.",
+ley: "Federal: Ley de Caminos, Puentes y Autotransporte Federal y Reglamento de Tránsito en Carreteras y Puentes de Jurisdicción Federal. Estatal: Ley de Caminos y Aeropistas de Oaxaca y Ley de Caminos, Carreteras y Puentes para el Estado de Oaxaca. Artículos específicos pendientes de verificación.",
+importante: "Primero identifica si el camino es federal o estatal, porque de eso depende qué ley y qué autoridad aplican.",
+web: "https://www.diputados.gob.mx/LeyesBiblio/index.htm"
 }
 ];
