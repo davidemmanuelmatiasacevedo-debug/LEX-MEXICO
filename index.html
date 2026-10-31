@@ -13,14 +13,6 @@
 :root{--verde:#14532d;--verde-claro:#e3efe7;--fondo:#f4f6f8;--texto:#1a1a1a;--gris:#555;--borde:#ccc;--alerta:#fff8e1;--rojo:#9b1c1c;}
 *{box-sizing:border-box;}
 body{font-family:Arial,Helvetica,sans-serif;font-size:20px;margin:0;background:var(--fondo);color:var(--texto);line-height:1.45;}
-<div id="diag" style="display:none;background:#fee;color:#900;padding:8px;font-size:16px;"></div>
-<script>
-window.addEventListener('error',function(e){
-var d=document.getElementById('diag');
-d.style.display='block';
-d.textContent+=(e.target&&e.target.src?'NO CARGA: '+e.target.src.split('/').pop():'ERROR: '+e.message)+' | ';
-},true);
-</script> 
 header{background:var(--verde);color:#fff;padding:24px;text-align:center;}
 header h1{margin:0;font-size:34px;}
 header p{margin:8px 0 0;font-size:20px;}
@@ -60,6 +52,14 @@ button{font-family:inherit;cursor:pointer;}
 </style>
 </head>
 <body>
+<div id="diag" style="display:none;background:#fee;color:#900;padding:8px;font-size:16px;"></div>
+<script>
+window.addEventListener('error',function(e){
+var d=document.getElementById('diag');
+d.style.display='block';
+d.textContent+=(e.target&&e.target.src?'NO CARGA: '+e.target.src.split('/').pop():'ERROR: '+e.message)+' | ';
+},true);
+</script>
 <header>
 <h1>LEX MÉXICO 🇲🇽</h1>
 <p>Conoce tus derechos y las leyes de México</p>
