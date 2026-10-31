@@ -176,10 +176,11 @@ function pintar(th,lh,aviso){
 const cont=document.getElementById("resultados");
 cont.innerHTML=aviso;
 th.forEach(function(t){
-cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="'+l.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a>'+(l.pdf?'<a href="'+l.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a>':'')+'</div>';});
+cont.innerHTML+='<div class="tema"><h2>'+t.nombre+'</h2><h3>Qué es</h3><p>'+t.queEs+'</p><h3>Qué conlleva</h3><p>'+t.queConlleva+'</p><h3>Dónde lo dice la ley</h3><p>'+t.ley+'</p><p class="nota"><b>Importante:</b> '+t.importante+'</p><a href="'+t.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a><a href="'+t.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a></div>';
+});
 if(th.length&&lh.length){cont.innerHTML+='<p class="sub">Leyes relacionadas</p>';}
 lh.forEach(function(l){
-cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="'+l.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a><a href="'+l.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a></div>';
+cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="'+l.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a>'+(l.pdf?'<a href="'+l.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a>':'')+'</div>';
 });
 }
 
@@ -205,7 +206,7 @@ if(th.length||lh.length){aviso='<p class="sub">Mostrando resultados para: <b>'+c
 if(!th.length&&!lh.length){cont.innerHTML="<p>No encontré resultados. Prueba con otra palabra.</p>";return;}
 pintar(th,lh,aviso);
 }
-document.getElementById("buscar").addEventListener("keydown",function(e){if(e.key==="Enter"){buscar();}});
+document.getElementById("buscar").addEventListener("keydown",function(e){if(e.key===" Enter"||e.key==="Enter"){buscar();}});
 mostrarHistorial();
 </script>
 </body>
