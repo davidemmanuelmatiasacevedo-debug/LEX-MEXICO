@@ -162,7 +162,7 @@ const leyes = [
   {
     nombre: "Ley de Movilidad para el Estado de Oaxaca",
     resumen: "Regula la movilidad y los servicios relacionados en el Estado de Oaxaca.",
-    palabras: "movilidad oaxaca transporte publico taxi urbano colectivo pasajeros concesiones transporte",
+    palabras: "movilidad transito vialidad oaxaca transporte publico taxi urbano colectivo pasajeros concesiones transporte",
     web: "https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html"
   },
   {
