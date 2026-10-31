@@ -349,5 +349,82 @@ plazo: "Es una emergencia: actúa de inmediato. Las primeras horas son clave par
 telefonos: "Emergencias: 911. Denuncia anónima: 089. Verifica también el teléfono de la Fiscalía de tu estado.",
 web: "https://www.diputados.gob.mx/LeyesBiblio/",
 pdf: ""
-  }
+  },
+  {
+nombre: "Discriminación",
+palabras: "discriminacion discriminar discriminado racismo racista trato desigual igualdad conapred edad discapacidad embarazo religion origen etnico negaron servicio",
+queEs: "Es cuando te tratan peor, te excluyen o te niegan un derecho por tu origen, tu género, tu edad, una discapacidad, tu condición social o económica, tu salud, tu religión, tu orientación sexual, tus opiniones u otra razón parecida.",
+queConlleva: "Puedes presentar una queja ante el CONAPRED, que puede ordenar medidas para corregir el daño y para que no se repita. En algunos casos la discriminación también es un delito.",
+pasos: [
+"Anota qué pasó: fecha, lugar, qué te dijeron o negaron y quién lo hizo.",
+"Guarda pruebas: mensajes, fotos, grabaciones y nombres de testigos.",
+"Si pasó en un trabajo, escuela, negocio o dependencia, pide por escrito la razón de la negativa.",
+"Presenta una queja ante el CONAPRED por teléfono, por correo o en persona.",
+"Si la discriminación es de una autoridad o servidor público, también puedes quejarte ante la Comisión de Derechos Humanos de tu estado o la CNDH.",
+"Si hubo violencia, amenazas o daños, denuncia también en la Fiscalía."
+],
+ley: "Constitución, artículo 1 (prohíbe la discriminación). Ley Federal para Prevenir y Eliminar la Discriminación: artículo 1 (qué es discriminación) y artículo 9 (conductas discriminatorias). El Código Penal Federal tiene un delito de discriminación (artículo 149 Ter).",
+importante: "No todo trato distinto es discriminación: tiene que impedirte o reducirte el ejercicio de un derecho. Tampoco necesitas abogado para presentar la queja.",
+plazo: "Las quejas tienen un plazo para presentarse. Pregunta al CONAPRED cuánto tiempo tienes en tu caso y no esperes.",
+telefonos: "CONAPRED: 800 543 0033 (todo el país) y 55 5262 1490 (CDMX). Emergencias: 911.",
+web: "https://www.diputados.gob.mx/LeyesBiblio/"
+},
+{
+nombre: "Actas del Registro Civil y CURP",
+palabras: "acta nacimiento acta de nacimiento curp registro civil registrar hijo error en el acta corregir acta copia certificada identidad matrimonio defuncion rectificacion aclaracion",
+queEs: "El Registro Civil guarda los datos de tu nacimiento, matrimonio y defunción. El acta de nacimiento prueba quién eres y es la base para sacar el CURP, la credencial del INE, el pasaporte y entrar a la escuela.",
+queConlleva: "Todas las personas tienen derecho a tener un nombre y a ser registradas al nacer. El registro de nacimiento y la primera copia certificada del acta deben ser gratuitos. Las copias adicionales sí pueden costar, según el estado.",
+pasos: [
+"Para conseguir una copia de tu acta de nacimiento, entra a gob.mx/actas y escribe tu CURP. Algunas copias se descargan en línea.",
+"Si no sabes tu CURP, consúltalo en gob.mx/curp con tus datos personales.",
+"Para registrar a un recién nacido, ve al Registro Civil con el certificado de nacimiento y las identificaciones de los padres. El registro es gratuito.",
+"Si el acta tiene un error, como una letra mal escrita o una fecha equivocada, pide una aclaración o rectificación en el Registro Civil de tu estado.",
+"Si nunca te registraron, pregunta por el registro extemporáneo en el Registro Civil de tu municipio.",
+"Guarda siempre una copia de tu acta y tu CURP en tu teléfono."
+],
+ley: "Constitución, artículo 4: toda persona tiene derecho a la identidad y al registro de nacimiento, y la primera copia certificada es gratuita. Las reglas del trámite están en el Código Civil o la Ley del Registro Civil de cada estado.",
+importante: "El costo de las copias y los requisitos para corregir un acta cambian según el estado. Usa solo páginas oficiales que terminen en gob.mx y no pagues a gestores.",
+plazo: "Cada estado marca un plazo para registrar a un recién nacido sin trámites extra. Después de ese plazo se hace un registro extemporáneo.",
+telefonos: "Consulta el teléfono de tu Registro Civil en la página de tu gobierno estatal.",
+web: "https://www.gob.mx/actas"
+},
+{
+nombre: "INFONAVIT",
+palabras: "infonavit credito de vivienda subcuenta de vivienda casa hipoteca retiro ahorro fraude coyote gestor infonatel mi cuenta infonavit patron no aporta",
+queEs: "El Infonavit es el instituto que da crédito para vivienda a trabajadores con empleo formal. Tu patrón aporta cada bimestre a tu subcuenta de vivienda; ese ahorro es tuyo y sirve para un crédito o para aumentar tu pensión.",
+queConlleva: "Tienes derecho a saber cuánto llevas ahorrado, a pedir un crédito si cumples los requisitos y, si no usas tu crédito, a que ese ahorro se sume a tu pensión o se te devuelva según las reglas. Todos los trámites en el Infonavit son gratuitos.",
+pasos: [
+"Consulta tu saldo y tus datos en Mi Cuenta Infonavit o en la app Socio Infonavit.",
+"Si tu patrón no te está dando de alta o no aporta, repórtalo al Infonatel o en un Centro de Servicio Infonavit.",
+"Si quieres un crédito, haz el trámite directo con el Infonavit. No pagues a gestores ni coyotes.",
+"Si quieres retirar tu ahorro de vivienda, revisa las reglas en Mi Cuenta Infonavit o llama al Infonatel.",
+"Si alguien te ofrece tu crédito en efectivo, es un fraude. No des datos ni pagues y repórtalo.",
+"Si falleció un trabajador, sus beneficiarios pueden pedir la devolución de la subcuenta con el acta de defunción y sus identificaciones."
+],
+ley: "Ley del Infonavit: artículo 35 (para qué sirve la subcuenta de vivienda), artículo 37 (devolución de los recursos) y artículo 38 (derecho a recibir información sobre tu subcuenta).",
+importante: "Nadie del Infonavit te debe pedir dinero por adelantado ni ofrecerte efectivo a cambio de tu crédito. Los fraudes con gestores son frecuentes.",
+plazo: "Hay plazos y reglas para pedir la devolución de tu subcuenta, según tu régimen y tu situación. Confírmalos con el Infonatel.",
+telefonos: "Infonatel: 800 008 3900 (todo el país). Para fraudes: denuncias@infonavit.org.mx",
+web: "https://www.diputados.gob.mx/LeyesBiblio/"
+},
+{
+nombre: "Bancos, tarjetas y deudas",
+palabras: "banco bancos tarjeta tarjeta de credito debito cargo no reconocido fraude bancario cobranza abusiva cobradores buro de credito condusef deuda deudas prestamo intereses cuenta",
+queEs: "Son los problemas con bancos y financieras: cargos que no reconoces, fraudes, cobros indebidos, cobradores que te acosan o reportes injustos en el Buró de Crédito. La CONDUSEF es la autoridad que defiende a los usuarios de servicios financieros.",
+queConlleva: "Si reclamas a tiempo un cargo que no reconoces, el banco debe investigarlo. Mientras lo hace, no puede cobrarte intereses por moras de ese cargo ni reportarte al Buró de Crédito por él. Si un cobrador te amenaza o te acosa, puedes quejarte ante la CONDUSEF.",
+pasos: [
+"Si ves un cargo raro, llama al banco de inmediato y bloquea la tarjeta.",
+"Pide un número de folio de tu reclamación y guárdalo.",
+"Reclama dentro de los primeros 90 días naturales desde la fecha del cargo.",
+"Generalmente el banco te debe abonar el dinero reclamado en unos 2 días mientras investiga, aunque la investigación puede tardar hasta 45 días.",
+"Si el banco no te responde o te lo niega, presenta tu queja en la CONDUSEF por teléfono o en su portal de queja electrónica.",
+"Si te robaron dinero o fue un fraude, también denuncia ante el Ministerio Público.",
+"Si te cobran con amenazas o te llaman a todas horas, anota las llamadas, guarda los mensajes y quéjate ante la CONDUSEF."
+],
+ley: "Ley de Protección y Defensa al Usuario de Servicios Financieros (CONDUSEF) y Ley de Instituciones de Crédito. Los artículos exactos dependen del tipo de problema y deben revisarse en el texto vigente.",
+importante: "Nunca compartas tu NIP, tus códigos ni tus claves por llamada o mensaje, aunque digan ser del banco. Puedes presentar tu queja tú mismo, sin gestores y sin pagar.",
+plazo: "Para cargos no reconocidos: 90 días naturales desde la fecha del cargo. Cada banco y producto puede tener otros plazos.",
+telefonos: "CONDUSEF: 800 999 8080 (todo el país) y 55 5340 0999 (CDMX). Emergencias: 911.",
+web: "https://www.gob.mx/condusef"
+}
 ];
