@@ -426,5 +426,98 @@ importante: "Nunca compartas tu NIP, tus códigos ni tus claves por llamada o me
 plazo: "Para cargos no reconocidos: 90 días naturales desde la fecha del cargo. Cada banco y producto puede tener otros plazos.",
 telefonos: "CONDUSEF: 800 999 8080 (todo el país) y 55 5340 0999 (CDMX). Emergencias: 911.",
 web: "https://www.gob.mx/condusef"
+},
+  {
+nombre: "Hostigamiento y acoso laboral",
+palabras: "hostigamiento acoso laboral mobbing acoso sexual en el trabajo jefe me acosa maltrato trabajo humillar amenazar despedir renunciar violencia laboral profedet",
+queEs: "El hostigamiento sexual es cuando un jefe o alguien con poder sobre ti abusa de esa posición con conductas sexuales. El acoso sexual es una conducta sexual que te hace daño aunque no haya relación de jefe a subordinado. También existen los malos tratos y la violencia en el trabajo.",
+queConlleva: "La empresa tiene prohibido permitir o tolerar el acoso. Si te pasa, puedes reclamar ante la autoridad laboral, y si el patrón es el responsable puedes terminar la relación de trabajo sin perder tus derechos y reclamar una indemnización. Si hubo tocamientos o amenazas, también puede ser un delito.",
+pasos: [
+"Anota fechas, lugares, qué te dijeron o hicieron y quién lo vio.",
+"Guarda mensajes, audios, correos y capturas, sin ponerte en riesgo.",
+"Reporta el caso por escrito en tu empresa, con el área de recursos humanos o el protocolo contra el acoso.",
+"Pide orientación gratuita a la Profedet por teléfono, WhatsApp o en una de sus oficinas.",
+"Si hubo tocamientos, amenazas o violencia, denuncia también ante la Fiscalía.",
+"Antes de renunciar o firmar algo, pide asesoría, porque eso puede afectar tus derechos."
+],
+ley: "Ley Federal del Trabajo: artículo 3 Bis (define hostigamiento y acoso sexual), artículo 132 (obligación de la empresa de tener un protocolo), artículo 133 (prohibiciones al patrón), y artículos 47 y 51 (terminación de la relación de trabajo).",
+importante: "No tienes que pagar un abogado para pedir orientación. La Profedet es gratuita. Nunca firmes una renuncia que no hayas leído.",
+plazo: "Hay plazos cortos. En un despido injustificado, por ejemplo, se tienen 2 meses para reclamar. Acude cuanto antes.",
+telefonos: "Profedet: 800 911 7877 y 800 717 2942. WhatsApp: 55 14 84 87 37. Emergencias: 911.",
+web: "https://www.gob.mx/profedet"
+},
+{
+nombre: "Embarazo, maternidad y paternidad",
+palabras: "embarazo embarazada maternidad paternidad licencia de maternidad licencia de paternidad parto incapacidad despido por embarazo lactancia adopcion permiso hijo recien nacido",
+queEs: "Son los derechos de las trabajadoras embarazadas y de los padres cuando nace o llega un hijo. Incluye descanso pagado antes y después del parto, y que no te puedan despedir ni discriminar por estar embarazada.",
+queConlleva: "La licencia de maternidad es de 12 semanas pagadas (6 antes y 6 después del parto); puedes pedir pasar hasta 4 de las semanas previas al descanso posterior. Si por el embarazo o el parto no puedes regresar a trabajar, puedes pedir una extensión con el 50% del salario por hasta 60 días. En adopción hay 6 semanas pagadas. Los padres tienen 5 días de licencia pagada.",
+pasos: [
+"Avisa a tu patrón por escrito y entrega el certificado médico de tu embarazo.",
+"Pide tu incapacidad por maternidad al IMSS o a tu servicio médico.",
+"Guarda copia de todo lo que entregues y pide acuse de recibido.",
+"Si te piden una prueba de embarazo para contratarte, o te despiden o te presionan por estar embarazada, guarda pruebas.",
+"Pide orientación gratuita a la Profedet.",
+"Si te discriminaron, también puedes quejarte ante el CONAPRED."
+],
+ley: "Constitución, artículo 123, apartado A, fracción V. Ley Federal del Trabajo, artículos 164 al 172 (protección de la maternidad); el artículo 170 fija las 12 semanas de descanso; el artículo 132, fracción XXVII Bis, da los 5 días de paternidad; el artículo 133 prohíbe discriminar a una mujer por embarazo.",
+importante: "Estar embarazada no es motivo legal para despedirte. Si te despiden por eso, reclama de inmediato y guarda pruebas. La licencia se paga a través de la seguridad social.",
+plazo: "En un despido injustificado tienes 2 meses para reclamar. No esperes.",
+telefonos: "Profedet: 800 911 7877. CONAPRED: 800 543 0033. IMSS: consulta el teléfono en imss.gob.mx.",
+web: "https://www.diputados.gob.mx/LeyesBiblio/"
+},
+{
+nombre: "Accidente de trabajo",
+palabras: "accidente de trabajo accidente laboral riesgo de trabajo imss incapacidad lesion en el trabajo me lastime trabajando enfermedad de trabajo pension por accidente indemnizacion st7",
+queEs: "Es una lesión, enfermedad o muerte que sufres por tu trabajo o al trasladarte de tu casa al trabajo o del trabajo a tu casa. También cuenta si te pasa mientras haces algo que te pidió tu patrón.",
+queConlleva: "Tienes derecho a atención médica gratuita, a una incapacidad pagada mientras te recuperas y, si te queda una secuela o incapacidad permanente, a una pensión o indemnización. Tu patrón no puede despedirte por haberte lastimado trabajando.",
+pasos: [
+"Avisa de inmediato a tu jefe o patrón y busca atención médica urgente.",
+"Si tienes IMSS, pide que te atiendan como riesgo de trabajo.",
+"Pide que el patrón avise al IMSS. Si no lo hace, avísalo tú o pide orientación.",
+"Guarda tus recibos, estudios médicos, incapacidades y fotos de lo ocurrido.",
+"No firmes un finiquito ni una renuncia sin asesoría.",
+"Si tu patrón no te dio de alta en el IMSS, también tienes derechos: pide ayuda a la Profedet."
+],
+ley: "Ley Federal del Trabajo, Título Noveno (riesgos de trabajo): el artículo 473 define riesgos de trabajo y el artículo 474, accidente de trabajo. También aplica la Ley del Seguro Social.",
+importante: "Si el patrón no te tenía inscrito en el IMSS, sigue siendo responsable de pagarte la atención y la indemnización. Guarda siempre pruebas de que trabajabas para él.",
+plazo: "El patrón debe avisar al IMSS pronto. Para reclamar indemnizaciones por riesgos de trabajo suele haber un plazo de 2 años; confírmalo con la Profedet.",
+telefonos: "Profedet: 800 911 7877. IMSS: 800 623 2323. Emergencias: 911. Verifica los números antes de publicarlos.",
+web: "https://www.gob.mx/profedet"
+},
+{
+nombre: "Reparto de utilidades (PTU)",
+palabras: "ptu reparto de utilidades utilidades participacion de los trabajadores en las utilidades aguinaldo no me pagaron utilidades empresa utilidades mayo junio",
+queEs: "Es el derecho de los trabajadores a recibir una parte de las ganancias de la empresa donde trabajan. Se reparte el 10% de las utilidades fiscales entre quienes trabajaron en ella.",
+queConlleva: "Debes recibirlo cada año. El monto tiene un tope: tres meses de salario o el promedio de lo que recibiste de PTU en los últimos tres años, lo que sea más favorable para ti. Para tener derecho, normalmente necesitas haber trabajado al menos 60 días en el año.",
+pasos: [
+"Pregunta a tu empresa cuánto te toca y cómo se calculó.",
+"Pide copia de la declaración anual de la empresa, que deben darte en abril.",
+"Revisa tu recibo de nómina: debe aparecer la PTU.",
+"Si no te pagaron, pide por escrito el pago.",
+"Si no te responden, acude a la Profedet para recibir asesoría y conciliación gratuitas."
+],
+ley: "Constitución, artículo 123, apartado A, fracción IX. Ley Federal del Trabajo, artículos 117 al 131: el artículo 122 fija el plazo de pago, y el artículo 127 los límites y quién no participa (por ejemplo directores y gerentes generales, y trabajadoras del hogar).",
+importante: "Las empresas tienen hasta el 30 de mayo para pagar. Si el patrón es una persona física, el plazo llega hasta el 29 de junio. Si no te lo pagan, tienes un año para reclamar.",
+plazo: "Plazo de pago: 60 días después de que la empresa deba pagar su impuesto anual. Para reclamar: 1 año.",
+telefonos: "Profedet: 800 911 7877 y 800 717 2942.",
+web: "https://www.gob.mx/profedet"
+},
+{
+nombre: "Outsourcing y subcontratación",
+palabras: "outsourcing subcontratacion tercerizacion empresa de servicios repse patron real me contrataron por otra empresa sin seguro imss salario menor empresa intermediaria",
+queEs: "Outsourcing es cuando una empresa te contrata para trabajar en otra. Desde la reforma de 2021, subcontratar personal está prohibido. Solo se permite contratar servicios especializados que no sean parte de la actividad principal de la empresa, y esas empresas deben estar registradas.",
+queConlleva: "Si te contratan mediante una empresa intermediaria para hacer el trabajo de siempre, el patrón real es quien recibe tu trabajo y puede ser responsable de tus derechos: salario, IMSS, aguinaldo, vacaciones y utilidades.",
+pasos: [
+"Pide tu contrato y recibos de nómina; guarda copias.",
+"Revisa en tu cuenta IMSS que estés dado de alta con tu salario real.",
+"Pregunta quién es tu patrón y para quién haces realmente el trabajo.",
+"Verifica si la empresa que te contrata está en el registro de servicios especializados (REPSE) de la STPS.",
+"Si te pagan menos de lo que ganas, o no te inscriben bien en el IMSS, pide orientación a la Profedet."
+],
+ley: "Ley Federal del Trabajo, reforma de 2021: artículos 12 al 15 (subcontratación y servicios especializados). Los artículos exactos deben revisarse en el texto vigente.",
+importante: "Revisa que tu salario en el IMSS sea el que realmente ganas: si es menor, afecta tu pensión y tus prestaciones.",
+plazo: "Para reclamar prestaciones, los plazos suelen ser de 1 año, y en un despido, de 2 meses. Actúa pronto.",
+telefonos: "Profedet: 800 911 7877 y 800 717 2942.",
+web: "https://www.gob.mx/profedet"
 }
 ];
