@@ -364,5 +364,83 @@ importante: "Las cuotas de mantenimiento y las normas de convivencia deben estar
 plazo: "Si hay un conflicto de cuotas o daños, no esperes: algunos plazos para reclamar son cortos. Consulta tu reglamento y tu ley estatal.",
 telefonos: "Emergencias: 911. Para quejas por ruido, consulta la línea de tu municipio.",
 web: "https://www.diputados.gob.mx/LeyesBiblio/"
+},
+{
+nombre: "Constitución: tus derechos y obligaciones, artículo por artículo",
+palabras: "constitucion constitucional mis derechos derechos humanos garantias articulo 1 articulo 8 derecho de peticion libertad de expresion libre transito libertad de trabajo obligaciones del ciudadano que dice la constitucion garantias individuales articulo 123 amparo pedir por escrito",
+queEs: "La Constitución es la ley más importante de México. Todas las demás leyes y todas las autoridades deben respetarla. Ahí están tus derechos humanos, y también obligaciones como pagar impuestos o mandar a tus hijos a la escuela.",
+queConlleva: "Si una autoridad o una ley viola un derecho de la Constitución, puedes reclamarlo con una petición por escrito, una queja de derechos humanos o un juicio de amparo. Ninguna autoridad, policía incluido, puede estar por encima de la Constitución.",
+pasos: [
+"Derecho de petición (artículo 8): escribe a la autoridad lo que pides, con tu nombre y firma, y pide acuse de recibido. La autoridad debe contestarte por escrito en breve.",
+"Pide información pública (artículo 6) en la Plataforma Nacional de Transparencia o en la unidad de transparencia de la dependencia.",
+"Si una autoridad te violó un derecho, presenta una queja gratuita ante la CNDH o la comisión de derechos humanos de tu estado.",
+"Si necesitas frenar un acto de autoridad, un abogado o un defensor público puede presentar un juicio de amparo (artículos 103 y 107).",
+"Guarda siempre tus pruebas y tus acuses, y pide asesoría antes de que se acabe el plazo."
+],
+ley: "Constitución Política de los Estados Unidos Mexicanos. DERECHOS: Art. 1 derechos humanos e igualdad, sin discriminación. Art. 2 pueblos indígenas y afromexicanos. Art. 3 educación gratuita y obligatoria. Art. 4 salud, vivienda digna, agua, ambiente sano, identidad y derechos de la niñez. Art. 5 libertad de trabajo. Art. 6 libre expresión y acceso a la información. Art. 7 libertad de imprenta. Art. 8 derecho de petición. Art. 9 reunión y asociación. Art. 11 libre tránsito. Art. 14 nadie puede ser privado de sus derechos sin juicio. Art. 16 nadie puede ser molestado ni su casa revisada sin orden escrita de autoridad competente. Art. 17 justicia gratuita y no hacerse justicia por mano propia. Art. 19 y 20 derechos de la persona acusada y de la víctima. Art. 22 prohíbe castigos crueles. Art. 27 propiedad. Art. 35 derechos del ciudadano (votar, ser votado). Art. 123 trabajo digno. OBLIGACIONES: Art. 31 mandar a tus hijos a la escuela y contribuir a los gastos públicos. Art. 36 inscribirte en el padrón, votar y cumplir los cargos de elección popular y consejos municipales. Art. 133 la Constitución es la ley suprema.",
+importante: "Muchos artículos tienen más párrafos y han sido reformados varias veces. Esta lista es un resumen: para el texto completo y vigente, consulta el sitio oficial de la Cámara de Diputados.",
+plazo: "El amparo generalmente debe presentarse dentro de 15 días hábiles desde que supiste del acto, aunque hay excepciones. Consulta rápido con un abogado o defensor público.",
+telefonos: "CNDH: 800 715 2000. Emergencias: 911. Defensoría pública: consulta la de tu estado.",
+web: "https://www.diputados.gob.mx/LeyesBiblio/index.htm",
+pdf: "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+},
+{
+nombre: "Derechos y obligaciones de las personas trabajadoras",
+palabras: "derechos del trabajador obligaciones del trabajador derechos y obligaciones trabajo jornada de trabajo 40 horas horas extra tiempo extra vacaciones prima vacacional aguinaldo descanso semanal dia de descanso contrato de trabajo salario minimo me deben horas extra no me pagan vacaciones despido injustificado indemnizacion prestaciones de ley",
+queEs: "Son los derechos mínimos que tienes por ley como trabajador, y las obligaciones que también debes cumplir. Aplican aunque no tengas contrato escrito.",
+queConlleva: "DERECHOS: salario de por lo menos el mínimo; jornada máxima (hoy 48 horas por semana; baja a 46 en 2027, 44 en 2028, 42 en 2029 y 40 en 2030, sin bajar tu salario); descanso semanal con goce de sueldo; horas extra pagadas; vacaciones (mínimo 12 días tras el primer año) con prima vacacional del 25%; aguinaldo de por lo menos 15 días antes del 20 de diciembre; reparto de utilidades; IMSS e INFONAVIT; un lugar de trabajo seguro y libre de violencia. OBLIGACIONES: hacer tu trabajo con cuidado y esmero, cumplir las normas del centro de trabajo, guardar los secretos técnicos o comerciales, cuidar las herramientas y avisar con causa justificada cuando faltes. No puedes llegar bajo efectos de alcohol o drogas, ni faltar sin causa, ni llevar armas al trabajo.",
+pasos: [
+"Pide tu contrato o constancia por escrito y guarda tus recibos de pago y mensajes.",
+"Revisa en tu cuenta del IMSS que estés dado de alta con tu salario real.",
+"Si te deben horas extra, vacaciones, aguinaldo o salario, pídelo por escrito a tu patrón.",
+"Si no te lo pagan o te despiden, pide asesoría gratuita en la Profedet.",
+"Antes de demandar debes intentar la conciliación en el Centro de Conciliación Laboral de tu estado o el federal, según el caso.",
+"No firmes una renuncia ni un finiquito sin leerlos y sin asesoría."
+],
+ley: "Constitución, artículo 123, apartado A. Ley Federal del Trabajo: artículos 47 (causas de despido sin responsabilidad para el patrón), 48 y 50 (indemnización si el despido es injustificado: 3 meses de salario y 20 días por año, además de salarios caídos), 59 y 61 (jornada), 66 al 68 (horas extra), 69 (descanso semanal), 76 (vacaciones), 80 (prima vacacional), 87 (aguinaldo), 132 y 133 (obligaciones y prohibiciones del patrón), 134 y 135 (obligaciones y prohibiciones del trabajador) y 518 (plazo para demandar un despido). La reforma de la jornada de 40 horas se publicó el 1 de mayo de 2026.",
+importante: "La reducción de la jornada es gradual: este año sigue siendo de 48 horas semanales. Los topes de horas extra también cambian poco a poco, así que revisa el artículo 66 vigente. Tu caso puede tener reglas especiales (trabajo del hogar, gobierno, plataformas digitales).",
+plazo: "Para reclamar un despido injustificado tienes 2 meses. Otras prestaciones suelen prescribir en 1 año. No esperes.",
+telefonos: "Profedet: 800 911 7877 y 800 717 2942. WhatsApp: 55 14 84 87 37. Emergencias: 911.",
+web: "https://www.diputados.gob.mx/LeyesBiblio/index.htm",
+pdf: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFT.pdf"
+},
+{
+nombre: "SEMOVI Oaxaca: licencia, placas y trámites de movilidad",
+palabras: "semovi semovi oaxaca secretaria de movilidad oaxaca licencia de conducir licencia permanente placas canje de placas tarjeta de circulacion cita semovi tramite vehicular concesion taxi mototaxi permiso de transporte refrendo revista vehicular baja de placas cambio de propietario",
+queEs: "SEMOVI es la Secretaría de Movilidad. En Oaxaca es la dependencia del gobierno del estado que registra los vehículos y expide placas, tarjetas de circulación, permisos y licencias para conducir. En la Ciudad de México existe otra SEMOVI, con sus propias reglas.",
+queConlleva: "Para circular necesitas licencia, placas y tarjeta de circulación vigentes. Si no los tienes o están vencidos, pueden multarte y llevar tu vehículo al corralón. Los costos los marca la ley estatal y pueden cambiar cada año.",
+pasos: [
+"Entra al sitio oficial de la Secretaría de Movilidad de Oaxaca y revisa el trámite que necesitas: licencia, canje de placas, tarjeta de circulación o cambio de propietario.",
+"Agenda tu cita en el sistema oficial de citas de la SEMOVI.",
+"Descarga o pide tu formato de pago oficial y paga solo en los lugares autorizados.",
+"Lleva tus documentos originales: identificación, comprobante de domicilio, tarjeta de circulación y placas anteriores, según el trámite.",
+"No pagues a gestores ni a personas que dicen conseguirte la cita o las placas más rápido.",
+"Guarda tus recibos. Si te cobran de más o te niegan un trámite sin razón, presenta una queja por escrito ante la contraloría del gobierno de Oaxaca o la Defensoría de los Derechos Humanos del Pueblo de Oaxaca."
+],
+ley: "Ley de Movilidad para el Estado de Oaxaca y su Reglamento (el artículo 3 del Reglamento dice que la Secretaría registra los vehículos y expide placas, tarjetas de circulación y permisos). Los cobros están en la ley estatal de derechos. Revisa el texto vigente en el sitio del Congreso de Oaxaca.",
+importante: "Requisitos, costos, fechas de canje de placas y tipos de licencia (incluida la permanente) cambian con frecuencia. Confírmalos siempre en el sitio oficial antes de ir.",
+plazo: "Las fechas de canje y descuentos se anuncian cada año. Revísalas en el sitio oficial.",
+telefonos: "SEMOVI Oaxaca: 800 310 70 70 y 951 501 69 00. Estos números salen de un documento de 2020; verifícalos en el sitio oficial. Emergencias: 911.",
+web: "https://www.oaxaca.gob.mx/semovi/"
+},
+{
+nombre: "Escuela: derechos y obligaciones de estudiantes y familias",
+palabras: "escuela educacion cuotas escolares cuotas voluntarias inscripcion no me inscriben no me dan los documentos boleta certificado uniforme utiles bullying acoso escolar maestro maltrata a mi hijo expulsion baja escolar becas director supervision escolar ieepo inscripcion gratis sep derechos del alumno obligaciones de los padres",
+queEs: "Son los derechos y obligaciones de estudiantes, madres y padres. La educación pública básica y media superior es gratuita y obligatoria, y la escuela debe ser un lugar seguro y libre de violencia.",
+queConlleva: "DERECHOS: inscripción sin condicionamientos, trato respetuoso, protección contra el acoso y la violencia escolar, recibir tus documentos y calificaciones, y becas si calificas. Las cuotas escolares son voluntarias y no pueden usarse para negarte la inscripción ni tus documentos. OBLIGACIONES: asistir a clases, respetar el reglamento y a los demás; y como madre, padre o tutor, hacer que tus hijos asistan y participar en su educación.",
+pasos: [
+"Si te piden una cuota para inscribir a tu hijo, pide que te digan por escrito que es voluntaria y que te den el recibo.",
+"Si hay bullying o violencia, avísale al maestro y al director por escrito y guarda una copia.",
+"Si no te responden, acude a la supervisión escolar o a la autoridad educativa de tu estado (en Oaxaca, el IEEPO).",
+"Si hay golpes, amenazas, acoso sexual o daño grave, denuncia también en la Fiscalía y avisa al DIF o a la Procuraduría de Protección de Niñas, Niños y Adolescentes.",
+"Si te niegan la inscripción o tus documentos, pídelo por escrito y presenta una queja ante la supervisión o la CNDH.",
+"Guarda boletas, mensajes, fotos de lesiones y nombres de testigos."
+],
+ley: "Constitución, artículos 3 y 31. Ley General de Educación (el artículo 6 dice que las cuotas voluntarias no pueden condicionar la inscripción ni la entrega de documentos). Ley General de los Derechos de Niñas, Niños y Adolescentes. Ley General de Educación Superior para universidades. Cada estado tiene su ley de educación.",
+importante: "Ninguna escuela pública puede negarte la inscripción o retenerte los documentos por no pagar una cuota. Si es un asunto de acoso sexual contra una niña, niño o adolescente, es un delito y debes denunciar.",
+plazo: "Las fechas de inscripción las marca la autoridad educativa cada ciclo. Si hay violencia, actúa de inmediato.",
+telefonos: "Emergencias: 911. Denuncia anónima: 089. Línea de atención a mujeres: 800 108 4053. CNDH: 800 715 2000.",
+web: "https://www.diputados.gob.mx/LeyesBiblio/index.htm"
 }
+
 );
