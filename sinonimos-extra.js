@@ -1,6 +1,10 @@
 /* LEX MÉXICO - palabras de la calle y del barrio (va después de lex-busqueda.js y antes de lex-ui.js) */
 (function(){
 var extra=[
+["me cobran en la escuela","escuela cuotas educacion"],["me piden cuota en la escuela","escuela cuotas educacion"],["no me quieren inscribir","escuela inscripcion"],["mi hijo sufre bullying","escuela bullying acoso escolar"],["bullying","escuela bullying acoso escolar"],["el maestro le pega a mi hijo","escuela maestro maltrata a mi hijo"],["no me dan los papeles de la escuela","escuela documentos boleta certificado"],
+["semovi","semovi movilidad"],["canje de placas","semovi placas canje"],["sacar mi licencia","semovi licencia de conducir"],["renovar mi licencia","semovi licencia de conducir"],["cita para placas","semovi placas cita"],
+["mis derechos","constitucion derechos"],["que dice la constitucion","constitucion derechos"],["constitucion","constitucion derechos"],["derecho de peticion","constitucion derecho de peticion"],
+["derechos del trabajador","derechos del trabajador obligaciones"],["obligaciones del trabajador","derechos del trabajador obligaciones"],["no me pagan horas extra","horas extra derechos del trabajador"],["no me dieron aguinaldo","aguinaldo derechos del trabajador"],["no me dan vacaciones","vacaciones derechos del trabajador"],["cuantas horas debo trabajar","jornada de trabajo 40 horas derechos del trabajador"],
 ["me levantaron","secuestro desaparicion"],["se llevaron a mi hijo","desaparicion secuestro"],["levanton","secuestro"],["me secuestraron","secuestro"],["secuestro virtual","extorsion secuestro"],["tienen a mi familiar","extorsion secuestro"],
 ["desaparecio mi hijo","desaparicion"],["desaparecio mi hija","desaparicion"],["no aparece mi hijo","desaparicion"],["no aparece mi familiar","desaparicion"],
 ["cobro de piso","extorsion"],["me piden cuota","extorsion"],["me cobran cuota","extorsion"],["me extorsionan","extorsion"],["me piden piso","extorsion"],
