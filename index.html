@@ -13,6 +13,7 @@ main{padding:20px;max-width:700px;margin:auto;}
 label{display:block;font-size:24px;font-weight:bold;margin-bottom:10px;}
 input{width:100%;box-sizing:border-box;font-size:22px;padding:16px;border:2px solid #14532d;border-radius:10px;}
 button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d;color:#fff;border:none;border-radius:10px;}
+select{width:100%;box-sizing:border-box;font-size:22px;padding:16px;border:2px solid #14532d;border-radius:10px;background:#fff;margin-bottom:16px;}
 .sub{margin:18px 0 0;font-size:18px;color:#555;}
 .sugerencia{width:100%;text-align:left;font-size:22px;padding:14px 16px;margin-top:6px;background:#fff;color:#1a1a1a;border:1px solid #ccc;border-radius:8px;}
 .chip{width:auto;display:inline-block;font-size:18px;padding:10px 14px;margin:8px 8px 0 0;background:#e3efe7;color:#14532d;border:1px solid #14532d;border-radius:20px;}
@@ -34,6 +35,9 @@ button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d
 <p>Conoce tus derechos y las leyes de México</p>
 </header>
 <main>
+<label for="estado">¿En qué estado estás?</label>
+<select id="estado" onchange="cambiarEstado()"></select>
+<p id="notaEstado" class="sub" style="margin:0 0 16px;"></p>
 <label for="buscar">¿Qué quieres saber?</label>
 <input id="buscar" type="text" placeholder="Ejemplo: despido, robo, garantía" oninput="sugerir()" autocomplete="off">
 <div id="sugerencias"></div>
@@ -44,6 +48,7 @@ button{width:100%;margin-top:12px;font-size:24px;padding:16px;background:#14532d
 </main>
 <script src="leyes.js"></script>
 <script src="temas.js"></script>
+<script src="estados.js"></script>
 <script>
 function limpiar(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
 
@@ -57,8 +62,74 @@ vocabulario.push({clave:clave,texto:t});
 }
 });
 }
-leyes.forEach(function(l){agregarPalabras(l.nombre+" "+l.palabras);});
-temas.forEach(function(t){agregarPalabras(t.nombre+" "+t.palabras);});
+
+let LEYES=leyes,TEMAS=temas,ESTADO=null;
+
+function buscarUrl(s,q){return "https://www.google.com/search?q="+encodeURIComponent(q+" "+s.n+" legislación vigente");}
+function llenar(txt,s){return txt.replace(/\{de\}/g,s.de).replace(/\{en\}/g,s.en).replace(/\{n\}/g,s.n);}
+
+function leyesDeEstado(s){
+const base=[
+["Constitución política local","constitucion estado derechos gobierno","Es la ley máxima del estado. Organiza el gobierno estatal y reconoce derechos en el ámbito local."],
+["Código Penal","codigo penal delito robo fraude lesiones homicidio amenazas despojo extorsion abuso","Define los delitos del fuero común y sus penas en el estado."],
+["Código Civil","codigo civil contrato renta propiedad herencia familia bienes divorcio","Regula contratos, bienes, familia y herencia en el estado."],
+["Ley o reglamento de tránsito y vialidad","transito vialidad multas infracciones licencia conductor placas vehiculo reglamento circulacion corralon grua deposito semaforo velocidad","Regula la circulación, las infracciones, las licencias y los depósitos de vehículos en el estado."],
+["Ley de movilidad y transporte","movilidad transito vialidad transporte publico taxi colectivo concesiones pasajeros","Regula la movilidad y el transporte público de pasajeros en el estado."],
+["Ley de caminos y carreteras","caminos carreteras puentes infraestructura vial","Regula los caminos y carreteras de competencia estatal."],
+["Ley orgánica municipal","municipio ayuntamiento presidente municipal cabildo autoridad municipal regidor","Regula cómo se organiza y gobierna cada municipio del estado."],
+["Ley de responsabilidades administrativas","corrupcion servidor publico funcionario responsabilidades sancion administrativa","Regula las faltas administrativas de las personas servidoras públicas del estado."]
+];
+return base.map(function(b){
+return {nombre:b[0]+" "+s.de,resumen:b[2]+" El nombre exacto puede variar; consulta la versión vigente.",palabras:b[1]+" "+limpiar(s.n),web:buscarUrl(s,b[0]),buscar:true};
+});
+}
+
+function adaptarTema(t,s){
+const o={};
+Object.keys(t).forEach(function(k){o[k]=t[k];});
+const g=GENERICO[t.nombre];
+if(g){Object.keys(g).forEach(function(k){o[k]=llenar(g[k],s);});}
+o.palabras=o.palabras.replace(/oaxaca/gi,limpiar(s.n));
+if(o.web&&/oaxaca/i.test(o.web)){o.web=buscarUrl(s,"Congreso legislación estatal");o.buscar=true;}
+if(o.pdf&&/oaxaca/i.test(o.pdf)){delete o.pdf;}
+return o;
+}
+
+function aplicarEstado(s){
+ESTADO=s;
+if(s.n==="Oaxaca"){
+LEYES=leyes;TEMAS=temas;
+document.getElementById("notaEstado").textContent="";
+}else{
+LEYES=leyes.filter(function(l){return !/Oaxaca/.test(l.nombre);}).concat(leyesDeEstado(s));
+TEMAS=temas.map(function(t){return adaptarTema(t,s);});
+document.getElementById("notaEstado").textContent="Para "+s.n+" se muestran las leyes federales y la información general. Los enlaces de leyes estatales son búsquedas en línea; revisa siempre el texto oficial vigente.";
+}
+vocabulario.length=0;
+LEYES.forEach(function(l){agregarPalabras(l.nombre+" "+l.palabras);});
+TEMAS.forEach(function(t){agregarPalabras(t.nombre+" "+t.palabras);});
+try{localStorage.setItem("estado",s.n);}catch(e){}
+}
+function cambiarEstado(){
+const n=document.getElementById("estado").value;
+const s=estados.filter(function(e){return e.n===n;})[0];
+if(!s){return;}
+aplicarEstado(s);
+document.getElementById("sugerencias").innerHTML="";
+if(document.getElementById("buscar").value.trim()){buscar();}else{document.getElementById("resultados").innerHTML="";}
+}
+function iniciarEstados(){
+const sel=document.getElementById("estado");
+estados.forEach(function(e){
+const o=document.createElement("option");
+o.value=e.n;o.textContent=e.n;sel.appendChild(o);
+});
+let guardado="Oaxaca";
+try{guardado=localStorage.getItem("estado")||"Oaxaca";}catch(e){}
+if(!estados.some(function(e){return e.n===guardado;})){guardado="Oaxaca";}
+sel.value=guardado;
+aplicarEstado(estados.filter(function(e){return e.n===guardado;})[0]);
+}
 
 function distancia(a,b){
 const m=a.length,n=b.length;
@@ -169,18 +240,18 @@ const base=limpiar(campos(x));
 return tokens.every(function(t){return base.indexOf(t)!==-1;});
 });
 }
-function leyesQue(q){return filtrar(leyes,q,function(l){return l.nombre+" "+l.resumen+" "+l.palabras;});}
-function temasQue(q){return filtrar(temas,q,function(t){return t.nombre+" "+t.palabras;});}
+function leyesQue(q){return filtrar(LEYES,q,function(l){return l.nombre+" "+l.resumen+" "+l.palabras;});}
+function temasQue(q){return filtrar(TEMAS,q,function(t){return t.nombre+" "+t.palabras;});}
 
 function pintar(th,lh,aviso){
 const cont=document.getElementById("resultados");
 cont.innerHTML=aviso;
 th.forEach(function(t){
-cont.innerHTML+='<div class="tema"><h2>'+t.nombre+'</h2><h3>Qué es</h3><p>'+t.queEs+'</p><h3>Qué conlleva</h3><p>'+t.queConlleva+'</p><h3>Dónde lo dice la ley</h3><p>'+t.ley+'</p><p class="nota"><b>Importante:</b> '+t.importante+'</p><a href="'+t.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a><a href="'+t.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a></div>';
+cont.innerHTML+='<div class="tema"><h2>'+t.nombre+'</h2><h3>Qué es</h3><p>'+t.queEs+'</p><h3>Qué conlleva</h3><p>'+t.queConlleva+'</p><h3>Dónde lo dice la ley</h3><p>'+t.ley+'</p><p class="nota"><b>Importante:</b> '+t.importante+'</p><a href="'+t.web+'" target="_blank" rel="noopener">'+(t.buscar?'Buscar texto oficial en línea':'Leer en línea (sitio oficial)')+'</a>'+(t.pdf?'<a href="'+t.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a>':'')+'</div>';
 });
 if(th.length&&lh.length){cont.innerHTML+='<p class="sub">Leyes relacionadas</p>';}
 lh.forEach(function(l){
-cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="'+l.web+'" target="_blank" rel="noopener">Leer en línea (sitio oficial)</a>'+(l.pdf?'<a href="'+l.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a>':'')+'</div>';
+cont.innerHTML+='<div class="tarjeta"><h2>'+l.nombre+'</h2><p>'+l.resumen+'</p><a href="'+l.web+'" target="_blank" rel="noopener">'+(l.buscar?'Buscar texto oficial en línea':'Leer en línea (sitio oficial)')+'</a>'+(l.pdf?'<a href="'+l.pdf+'" target="_blank" rel="noopener">Descargar PDF oficial</a>':'')+'</div>';
 });
 }
 
@@ -206,7 +277,8 @@ if(th.length||lh.length){aviso='<p class="sub">Mostrando resultados para: <b>'+c
 if(!th.length&&!lh.length){cont.innerHTML="<p>No encontré resultados. Prueba con otra palabra.</p>";return;}
 pintar(th,lh,aviso);
 }
-document.getElementById("buscar").addEventListener("keydown",function(e){if(e.key===" Enter"||e.key==="Enter"){buscar();}});
+document.getElementById("buscar").addEventListener("keydown",function(e){if(e.key==="Enter"){buscar();}});
+iniciarEstados();
 mostrarHistorial();
 </script>
 </body>
