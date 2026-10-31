@@ -58,15 +58,15 @@ $("sugerencias").innerHTML="";
 if(!q){mensaje("Escribe una palabra para buscar.");return;}
 $("situaciones").innerHTML="";
 guardarHistorial(texto);
-var th=filtrar(TEMAS,q,camposTema,claves);
-var lh=filtrar(LEYES,q,camposLey,claves);
+var r=buscarAmbos(q,claves);
+var th=r.th,lh=r.lh;
 var aviso="";
-if(!th.length&&!lh.length&&q!==q0){th=filtrar(TEMAS,q0,camposTema);lh=filtrar(LEYES,q0,camposLey);}
+if(!th.length&&!lh.length&&q!==q0){r=buscarAmbos(q0,[]);th=r.th;lh=r.lh;}
 if(!th.length&&!lh.length){
 var c=corregir(q);
 if(c){
-th=filtrar(TEMAS,limpiar(c),camposTema);
-lh=filtrar(LEYES,limpiar(c),camposLey);
+r=buscarAmbos(limpiar(c),[]);
+th=r.th;lh=r.lh;
 if(th.length||lh.length){aviso=avisoHtml("Mostrando resultados para:",c);}
 }
 }

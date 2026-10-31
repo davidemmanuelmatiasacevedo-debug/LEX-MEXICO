@@ -162,16 +162,26 @@ var tokens=q.split(/\s+/).filter(function(t){return t;});
 var utiles=tokens.filter(function(t){return vacias.indexOf(t)===-1;});
 return utiles.length?utiles:tokens;
 }
-function filtrar(lista,q,campos,claves){
+function filtrarCon(lista,q,campos,claves,estricto){
 var tokens=(claves&&claves.length)?claves:tokensUtiles(q);
 var bases=lista.map(function(x){return limpiar(campos(x));});
 if(!(claves&&claves.length)){
-var presentes=tokens.filter(function(t){return bases.some(function(b){return coincide(b,t);});});
+var presentes=tokens.filter(function(t){return bases.some(function(b){return coincide(b,t,estricto);});});
 if(presentes.length&&presentes.length<tokens.length){tokens=presentes;}
 }
 return lista.filter(function(x,i){
-return tokens.every(function(t){return coincide(bases[i],t);});
+return tokens.every(function(t){return coincide(bases[i],t,estricto);});
 });
+}
+/* Primero busca la palabra exacta; solo si no hay nada, usa la raíz de la palabra */
+function buscarAmbos(q,claves){
+var th=filtrarCon(TEMAS,q,camposTema,claves,true);
+var lh=filtrarCon(LEYES,q,camposLey,claves,true);
+if(!th.length&&!lh.length){
+th=filtrarCon(TEMAS,q,camposTema,claves,false);
+lh=filtrarCon(LEYES,q,camposLey,claves,false);
+}
+return {th:th,lh:lh};
 }
 function filtrarAlguno(lista,q,campos){
 var tokens=q.split(/\s+/).filter(function(t){return t.length>=4&&vacias.indexOf(t)===-1;});

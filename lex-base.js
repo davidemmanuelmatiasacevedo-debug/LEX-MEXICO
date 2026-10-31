@@ -3,7 +3,7 @@ var FECHA_REVISION="octubre de 2026";
 var ESTADO_POR_DEFECTO="Oaxaca";
 
 function $(id){return document.getElementById(id);}
-function limpiar(t){return String(t).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+function limpiar(t){return String(t).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
 function esc(s){
 return String(s==null?"":s).replace(/[&<>"']/g,function(c){
 return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
@@ -14,9 +14,9 @@ function guardar(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function leer(k){try{return localStorage.getItem(k);}catch(e){return null;}}
 function quitar(k){try{localStorage.removeItem(k);}catch(e){}}
 function raiz(t){return t.length>=6?t.slice(0,5):t;}
-function coincide(base,t){
+function coincide(base,t,estricto){
 if(base.indexOf(t)!==-1){return true;}
-return t.length>=6&&base.indexOf(raiz(t))!==-1;
+return !estricto&&t.length>=6&&base.indexOf(raiz(t))!==-1;
 }
 
 var LEYES=leyes,TEMAS=temas,ESTADO=null;
