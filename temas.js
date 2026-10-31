@@ -309,5 +309,25 @@ queConlleva: "Un servidor público puede ser sancionado con amonestación, suspe
 ley: "Ley de Responsabilidades Administrativas del Estado y Municipios de Oaxaca. Artículos específicos pendientes de verificación.",
 importante: "Algunas conductas también pueden ser delito y se denuncian ante la Fiscalía. Las quejas administrativas van al órgano de control competente.",
 web: "https://www.congresooaxaca.gob.mx/legislaciones/legislacion_estatal.html"
-}
+},
+  {
+nombre: "Violación y abuso sexual",
+palabras: "violacion violar abuso sexual abusar tocamientos manoseo agresion sexual acoso sexual hostigamiento",
+queEs: "La violación ocurre cuando alguien tiene relaciones sexuales con otra persona usando violencia. El abuso sexual es realizar actos sexuales, como tocamientos, caricias o roces, sin el consentimiento de la otra persona. El consentimiento debe ser libre y voluntario: quedarse callada, paralizada o no resistirse no significa que se aceptó.",
+queConlleva: "Ambos son delitos y se castigan con prisión. Desde la reforma de marzo de 2026, el abuso sexual se persigue de oficio, la pena base es de 3 a 7 años de prisión y aumenta si hay agravantes, por ejemplo si el agresor es familiar, servidor público o la víctima es menor. La violación tiene penas mucho más altas. También puede haber reparación del daño, como atención psicológica pagada por el agresor.",
+pasos: [
+"Ponte a salvo primero. Si hay peligro, llama al 911.",
+"Busca atención médica lo antes posible, de preferencia dentro de las primeras 72 horas. Pueden darte medicamentos para prevenir embarazo e infecciones. No necesitas denunciar antes para recibir atención médica.",
+"Si puedes, no te bañes ni laves la ropa antes de la revisión médica, porque puede servir como prueba. Si ya lo hiciste, igual puedes denunciar.",
+"Denuncia ante la Fiscalía. Tienes derecho a ser atendida con respeto, a que te acompañe alguien de confianza y, si lo pides, a que te atienda una mujer.",
+"Pide asesoría gratuita de una asesoría jurídica de víctimas o de la Secretaría de las Mujeres de tu estado.",
+"Guarda mensajes, fotos, audios y nombres de testigos, sin ponerte en riesgo."
+],
+ley: "Código Penal Federal, Título Decimoquinto, Capítulo I: artículo 259 Bis (hostigamiento sexual), artículo 260 (abuso sexual, reformado el 13 de marzo de 2026), artículo 265 (violación) y artículo 266 Bis (agravantes). Los delitos comunes se denuncian ante la Fiscalía de tu estado y se aplica el código penal estatal.",
+importante: "Nada de esto es tu culpa. Tu ropa, tu pasado o si tomaste alcohol no cambian que el delito existe. Si la víctima es menor de edad, un adulto de confianza debe acompañarla a denunciar o llamar al 911.",
+plazo: "No esperes. Para atención médica, lo ideal es dentro de las primeras 72 horas. Para denunciar, entre más pronto, más pruebas hay. Los plazos legales para denunciar dependen de cada estado y del caso; consúltalos con una asesoría jurídica.",
+telefonos: "Emergencias: 911. Línea nacional para mujeres: 800 108 4053. Oaxaca, Secretaría de las Mujeres: (951) 207 2666. Verifica los números antes de publicarlos.",
+web: "https://www.diputados.gob.mx/LeyesBiblio/ref/cpf.htm",
+pdf: "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf"
+  }
 ];
