@@ -463,6 +463,12 @@ leyes.push(
     web: "https://www.diputados.gob.mx/LeyesBiblio/index.htm"
   },
 {
+    nombre: "Ley General de Educación Superior",
+    resumen: "Regula las universidades, el acceso gratuito a la educación superior y los derechos de estudiantes. Cómo ejercerlo: pide tu inscripción y tus documentos por escrito y, si te los niegan, presenta una queja ante la autoridad educativa o la CNDH.",
+    palabras: "universidad educacion superior prepa preparatoria licenciatura inscripcion universidad gratuita becas universitarias estudiantes universitarios titulacion titulo universidad",
+    web: "https://www.diputados.gob.mx/LeyesBiblio/index.htm"
+  },
+{
     nombre: "Ley de Aviación Civil",
     resumen: "Regula vuelos, aerolíneas y los derechos de los pasajeros. Cómo ejercerlo: guarda tu boleto y reclama por escrito a la aerolínea; si no responde, acude a PROFECO.",
     palabras: "avion vuelo aerolinea maleta perdida retraso de vuelo cancelaron mi vuelo pasajero boleto de avion sobreventa",
