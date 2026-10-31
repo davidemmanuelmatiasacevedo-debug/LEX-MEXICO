@@ -329,5 +329,25 @@ plazo: "No esperes. Para atención médica, lo ideal es dentro de las primeras 7
 telefonos: "Emergencias: 911. Línea nacional para mujeres: 800 108 4053. Oaxaca, Secretaría de las Mujeres: (951) 207 2666. Verifica los números antes de publicarlos.",
 web: "https://www.diputados.gob.mx/LeyesBiblio/ref/cpf.htm",
 pdf: "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf"
+  },
+  {
+nombre: "Secuestro",
+palabras: "secuestro secuestrar secuestraron plagio privacion de la libertad rescate levanton levantaron secuestro expres",
+queEs: "Es privar de la libertad a una persona para pedir un rescate o algún beneficio, causarle un daño o perjuicio, o robarla por poco tiempo para sacarle dinero (secuestro exprés). También es delito ayudar, vigilar o cobrar el rescate.",
+queConlleva: "Es uno de los delitos más graves. La pena base es de 40 a 80 años de prisión y multa, y sube si hay agravantes: por ejemplo si la víctima es menor de edad, si se le lesiona o si el secuestrador es servidor público. Si la víctima muere por causa del secuestro, la pena es de 80 a 140 años.",
+pasos: [
+"Llama al 911 de inmediato. No hay que esperar un tiempo para reportarlo.",
+"Si te piden rescate, no pagues ni negocies solo. Avisa a la autoridad para que te oriente.",
+"Anota todo lo que puedas: números de teléfono, hora de las llamadas, nombres, placas y descripciones.",
+"No borres mensajes, audios ni llamadas. Son pruebas.",
+"Denuncia en la Fiscalía de tu estado, en su área de atención a secuestro, o ante la FGR. También puedes denunciar de forma anónima al 089.",
+"Pide apoyo para la familia: las víctimas y sus familiares tienen derecho a asesoría, protección y atención psicológica."
+],
+ley: "Ley General para Prevenir y Sancionar los Delitos en Materia de Secuestro: artículo 9 (penas base), artículo 10 (agravantes) y artículo 11 (si la víctima muere). Es una ley general, es decir, se aplica igual en todo el país.",
+importante: "Si alguien te amenaza con hacerte daño a ti o a tu familia, no lo enfrentes. Primero tu seguridad: busca un lugar seguro y llama al 911. Si el secuestro es tuyo o de un familiar, evita compartirlo en redes sociales.",
+plazo: "Es una emergencia: actúa de inmediato. Las primeras horas son clave para ubicar a la persona.",
+telefonos: "Emergencias: 911. Denuncia anónima: 089. Verifica también el teléfono de la Fiscalía de tu estado.",
+web: "https://www.diputados.gob.mx/LeyesBiblio/",
+pdf: ""
   }
 ];
