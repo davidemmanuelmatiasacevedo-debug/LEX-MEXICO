@@ -108,6 +108,15 @@ function coincide(base,t){
 if(base.indexOf(t)!==-1){return true;}
 return t.length>=6&&base.indexOf(raiz(t))!==-1;
 }
+function urlSegura(u){return /^https?:\/\//i.test(u||"")?u:"";}
+function guardar(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+function leer(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function quitar(k){try{localStorage.removeItem(k);}catch(e){}}
+function raiz(t){return t.length>=6?t.slice(0,5):t;}
+function coincide(base,t){
+if(base.indexOf(t)!==-1){return true;}
+return t.length>=6&&base.indexOf(raiz(t))!==-1;
+}
 
 /* ====== Estado de la app ====== */
 var LEYES=leyes,TEMAS=temas,ESTADO=null;
