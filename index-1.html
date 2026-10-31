@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEX MÉXICO</title>
+<meta name="description" content="Conoce tus derechos y las leyes de México. Orientación legal básica por estado, en lenguaje sencillo.">
+<meta name="theme-color" content="#14532d">
+<meta property="og:title" content="LEX MÉXICO">
+<meta property="og:description" content="Conoce tus derechos y las leyes de México.">
+<meta property="og:type" content="website">
+<style>
+:root{--verde:#14532d;--verde-claro:#e3efe7;--fondo:#f4f6f8;--texto:#1a1a1a;--gris:#555;--borde:#ccc;--alerta:#fff8e1;--rojo:#9b1c1c;}
+*{box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;font-size:20px;margin:0;background:var(--fondo);color:var(--texto);line-height:1.45;}
+header{background:var(--verde);color:#fff;padding:24px;text-align:center;}
+header h1{margin:0;font-size:34px;}
+header p{margin:8px 0 0;font-size:20px;}
+main{padding:20px;max-width:700px;margin:auto;}
+label{display:block;font-size:24px;font-weight:bold;margin-bottom:10px;}
+input,select{width:100%;font-size:22px;padding:16px;border:2px solid var(--verde);border-radius:10px;background:#fff;color:var(--texto);}
+select{margin-bottom:16px;}
+button{font-family:inherit;cursor:pointer;}
+:focus-visible{outline:3px solid #f59e0b;outline-offset:2px;}
+.fila{display:flex;gap:8px;}
+.fila input{flex:1;min-width:0;}
+.btn{width:100%;margin-top:12px;font-size:24px;padding:16px;background:var(--verde);color:#fff;border:none;border-radius:10px;}
+.mic{flex:none;width:64px;font-size:26px;background:#fff;border:2px solid var(--verde);border-radius:10px;}
+.mic.activo{background:var(--rojo);color:#fff;border-color:var(--rojo);}
+.sub{margin:18px 0 0;font-size:18px;color:var(--gris);}
+.sugerencia{display:block;width:100%;text-align:left;font-size:22px;padding:14px 16px;margin-top:6px;background:#fff;color:var(--texto);border:1px solid var(--borde);border-radius:8px;}
+.chip{display:inline-block;font-size:18px;padding:10px 14px;margin:8px 8px 0 0;background:var(--verde-claro);color:var(--verde);border:1px solid var(--verde);border-radius:20px;}
+.borrar{display:block;font-size:16px;padding:8px 12px;margin-top:12px;background:none;color:var(--gris);border:1px solid #999;border-radius:8px;}
+.emergencia{background:#fdecec;border:2px solid var(--rojo);border-radius:10px;padding:12px 16px;margin:0 0 20px;font-size:18px;}
+.emergencia b{color:var(--rojo);}
+.emergencia a{color:var(--rojo);font-weight:bold;white-space:nowrap;}
+.tarjeta,.tema{background:#fff;border:1px solid var(--borde);border-radius:10px;padding:16px;margin-top:16px;}
+.tema{border-left:8px solid var(--verde);}
+.tarjeta h2{margin:0 0 8px;font-size:24px;color:var(--verde);}
+.tema h2{margin:0 0 8px;font-size:28px;color:var(--verde);}
+.tema h3{margin:16px 0 4px;font-size:20px;color:var(--verde);}
+.tema p,.tarjeta p{margin:0;}
+.tema ol{margin:0;padding-left:24px;}
+.tema li{margin-bottom:4px;}
+.tema .nota{background:var(--alerta);padding:10px;border-radius:8px;margin-top:16px;font-size:18px;}
+.tema .legal{font-size:15px;color:var(--gris);margin-top:12px;}
+.tarjeta a,.tema a.enlace{display:block;color:var(--verde);font-weight:bold;margin-top:12px;}
+.acciones{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.acciones button{font-size:16px;padding:8px 12px;background:#fff;color:var(--verde);border:1px solid var(--verde);border-radius:8px;}
+.aviso{font-size:16px;color:var(--gris);margin-top:30px;}
+.aviso-top{font-size:16px;background:#eef2ff;border:1px solid #c7d2fe;border-radius:8px;padding:10px 12px;margin:0 0 20px;color:#1e3a8a;}
+</style>
+</head>
+<body>
+<div id="diag" style="display:none;background:#fee;color:#900;padding:8px;font-size:16px;"></div>
+<script>
+window.addEventListener('error',function(e){
+var d=document.getElementById('diag');
+d.style.display='block';
+d.textContent+=(e.target&&e.target.src?'NO CARGA: '+e.target.src.split('/').pop():'ERROR: '+e.message)+' | ';
+},true);
+</script>
+<header>
+<h1>LEX MÉXICO 🇲🇽</h1>
+<p>Conoce tus derechos y las leyes de México</p>
+</header>
+<main>
+<p class="aviso-top"><b>Orientación, no asesoría legal.</b> Esta información es general y puede cambiar. Para tu caso concreto consulta a un abogado o a un defensor público.</p>
+<div class="emergencia" role="note">
+<b>¿Estás en peligro?</b> Llama al <a href="tel:911">911</a>. Para denunciar de forma anónima: <a href="tel:089">089</a>.
+</div>
+
+<label for="estado">¿En qué estado estás?</label>
+<select id="estado"></select>
+<p id="notaEstado" class="sub" style="margin:0 0 16px;"></p>
+
+<label for="buscar">¿Qué quieres saber?</label>
+<div class="fila">
+<input id="buscar" type="search" placeholder="Ejemplo: despido, robo, garantía" autocomplete="off" enterkeyhint="search" aria-describedby="ayudaBusqueda">
+<button id="mic" class="mic" type="button" aria-label="Buscar con la voz" hidden>🎤</button>
+</div>
+<span id="ayudaBusqueda" class="sub" style="display:block;margin-top:6px;">Puedes escribir con tus propias palabras: "me corrieron", "me chocaron".</span>
+<div id="sugerencias" role="listbox" aria-label="Sugerencias"></div>
+<button id="btnBuscar" class="btn" type="button">Buscar</button>
+<div id="historial"></div>
+<div id="situaciones"></div>
+<div id="resultados" aria-live="polite" tabindex="-1"></div>
+<p class="aviso">LEX MÉXICO ofrece información y orientación. No sustituye a un abogado. Tus búsquedas se guardan solo en este dispositivo.<br>Última revisión del contenido: <span id="fechaRev"></span>.</p>
+</main>
+
+<script src="leyes.js"></script>
+<script src="temas.js"></script>
+<script src="temas-extra.js"></script>
+<script src="estados.js"></script>
+<script src="lex-base.js"></script>
+<script src="lex-busqueda.js"></script>
+<script src="lex-ui.js"></script>
+</body>
+</html>
